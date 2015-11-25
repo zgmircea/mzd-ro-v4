@@ -1,0 +1,157 @@
+#about figure {
+  float: right;
+  position: relative;
+  /* preload */
+  background-image: url("#{$imageBase}stash.gif"), url("#{$imageBase}stash2.gif"), url("#{$imageBase}stash3.gif");
+  background-position: -200px -200px, -200px -200px, -200px -200px;
+  background-repeat: no-repeat;
+  cursor: url("#{$imageBase}stash.gif"), auto;
+}
+#about figure.chinese {
+  cursor: url("#{$imageBase}stash2.gif"), auto;
+}
+#about figure.redneck {
+  cursor: url("#{$imageBase}stash3.gif"), auto;
+}
+.stash {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+
+
+
+
+
+/* expertize
+----------------------------------------------- */
+#expertise ul {
+  display: block;
+  margin: 0px auto;
+  padding: 0px;
+}
+#expertise li {
+  width: 254px;
+  height: 154px;
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  padding-top: 140px;
+  transition: all 500ms ease;
+
+}
+#expertise .icon {
+  font-size: 5em;
+  position: absolute;
+  z-index: 2;
+  left: 92px;
+  top: 80px;
+  transition: all 500ms ease;
+    opacity: 0.7;
+    font-size: 60px;
+}
+#expertise li:hover .icon {
+  font-size: 6em;
+  left: 78px;
+  top: -20px;
+}
+#expertise h4 {
+    z-index: 2;
+    position: relative;
+    font-size: 1.2em;
+    top: 20px;
+    color: #fff;
+}
+#expertise p {
+  display: block;
+  position: absolute;
+  width: 300px;
+  left: -40px;
+top:250px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  z-index: 3;
+  opacity: 0;
+  border-radius: 5px;
+  transition: all 500ms ease;
+}
+#expertise li:hover p {
+  opacity: 1;
+}
+#expertise li:before {
+  display: block;
+  width: 180px;
+  height: 180px;
+  content: " ";
+  position: absolute;
+  z-index: 3;
+  top: -1px;
+  left: 126px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 128px 0 128px 128px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.2);
+
+  transition: all 500ms ease;
+transform-origin: left;
+}
+#expertise li:hover:before {
+    transform: rotate(-90deg);
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.4);
+    //border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
+}
+#expertise li:after {
+  display: block;
+  width: 180px;
+  height: 180px;
+  content: " ";
+  position: absolute;
+  z-index: 1;
+  top: 37px;
+  left: 37px;
+  background: url("../assets/noise.png") 0px 0px;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  transition: all 500ms ease;
+}
+#expertise li:hover:after {
+    transform: rotate(-45deg);
+    border-width: 90px;
+}
+li.red:after {
+  border: 15px solid #B6362B;
+}
+#expertise li.red:hover:after {
+  background-color: #B6362B;
+  border-bottom-color:#7D251E;
+}
+li.green:after {
+  border: 15px solid #AECA64;
+}
+#expertise li.green:hover:after {
+  background-color: #AECA64;
+  border-bottom-color:#84A036;
+    
+}
+li.blue:after {
+    border: 15px solid #5BB59C;
+}
+#expertise li.blue:hover:after {
+    background-color: #5BB59C;
+    border-bottom-color:#408C77;
+}
+#expertise li:hover {
+  color: #fff;
+}
+
+
+/* =error404
+----------------------------------------------- */
+.error404 {
+    width: 75%;
+}

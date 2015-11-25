@@ -45,3 +45,27 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# =========================
+# Gulp
+# =========================
+*.log
+node_modules
+build
+*.node
+components
+coverage
+extras
+*.orig
+.idea
+sandbox
+test/out-fixtures/*
+test/watch-*.txt
+gulp.1
+
+
+# =========================
+# Brackets
+# =========================
+.brackets.json

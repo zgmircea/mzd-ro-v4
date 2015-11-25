@@ -1,0 +1,41 @@
+/*!
+Theme Name: Gone2Travel
+Theme URI: 
+Author: MZD
+Author URI: http://mzd.ro
+Description: Theme for travel blog
+Version: 0.1.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Gone2Travel
+*/
+
+/* RESET & BASE
+------------------ */
+//@import "reset";
+@import "../node_modules/normalize.css/normalize";
+@import "mixins";
+@import "base";
+
+/* =LAYOUTS
+------------------ */
+@import "layout";
+@import "header";
+@import "nav";
+@import "footer";
+
+/* =CONTENT
+------------------ */
+@import "typography";
+@import "forms";
+
+/* =COMPONENTS
+------------------ */
+/* Includes password protection for pages and posts, 404 page */
+@import "components";
+@import "mouse";
+@import "animate";
+
+/* =PROJECT PAGES SPECIFIC
+------------------  */
+@import "content";

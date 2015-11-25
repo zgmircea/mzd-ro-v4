@@ -1,0 +1,86 @@
+html{
+    height:101%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+body {
+	background: $bg;
+	margin: 0;
+	padding: 0;
+}
+#page {
+	width: 100%;
+	padding: 0px;
+}
+#main,
+#footer,
+#page,
+.row {
+	@include clearfix;
+}
+
+// Grid System
+.container {
+	width: 95%;
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+.content-bg{
+    position: absolute;
+    z-index: 1;
+    background: $bglite;
+}
+.highlight-bg{
+    position: absolute;
+    z-index: 0;
+    background: $accent;
+}
+
+.col { 
+	display: block;
+	float: left;
+	width: 100%;
+	margin-left: 2%;
+	@media (max-width: $xs){
+		margin-left: 0;
+	}
+	&:first-child,
+	&.pull-left {
+		margin-left: 0;
+	}
+}
+.span_1 { width: 6.5%; }
+.span_2 { width: 15.0%; }
+.span_3 { width: 23.5%; }
+.span_4 { width: 32.0%; }
+.span_5 { width: 40.5%; }
+.span_6 { width: 49.0%; }
+.span_7 { width: 57.5%; }
+.span_8 { width: 66.0%; }
+.span_9 { width: 74.5%; }
+.span_10 { width: 83.0%; }
+.span_11 { width: 91.5%; }
+.span_12 { width: 100%; }
+
+.span_1,
+.span_2,
+.span_3,
+.span_4,
+.span_5,
+.span_6,
+.span_7,
+.span_8,
+.span_9,
+.span_10,
+.span_11,
+.span_12 {
+	@media (max-width: $s){
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+/* Sticky footer 
+@include sticky-footer( $footerheight, '#page','#main','#footer');*/

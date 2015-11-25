@@ -1,0 +1,120 @@
+/*
+    Scroll down hint
+*/
+$scrollcolor: #fff;
+$scroll_width: 80px;
+$scroll_height: 100px;
+
+.scroll-hint
+{
+    width: $scroll_width;
+    height: $scroll_height;
+    z-index: 13;
+}
+.scroll-hint span
+{
+  display: block;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  border-right: 3px solid $scrollcolor;
+  border-bottom: 3px solid $scrollcolor;
+  margin: 20% auto;
+}
+
+.scroll-hint span.unu
+{
+  margin-top: 27%;
+}
+
+.unu, .doi, .trei
+{
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+}
+
+.unu
+{
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+}
+
+.doi
+{
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+}
+
+.trei
+{
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+}
+
+.mouse
+{
+    position: absolute;
+    display: block;
+    width: $scroll_width;
+    height: $scroll_height;
+    border: 4px solid $scrollcolor;
+    top: 0px;
+    left: 0px;
+    transition: all 500ms ease;
+    
+    &::after, &::before{
+        content: " ";
+        display: block;
+        width: $scroll_width;
+        height: $scroll_height;
+        border: 4px solid rgba(0,0,0,0.3);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+        transition: all 500ms ease;
+    }
+    &::before{
+        border: 4px solid $scrollcolor;
+        top: -4px;
+        left: -4px;
+        z-index: 2;
+    }
+    &:hover{
+        top: -2px;
+        left: -2px;
+    }
+    &:hover:after{
+        top: 13px;
+        left: 13px;
+        border-color:rgba(0,0,0,0.1);
+    }
+}
+
+@-webkit-keyframes mouse-scroll {
+
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
