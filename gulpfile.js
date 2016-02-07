@@ -1,9 +1,13 @@
 var gulp        = require('gulp');
+require('es6-promise').polyfill();
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var imagemin = require('gulp-imagemin');
+var tinypng = require('gulp-tinypng');
+var concat = require('gulp-concat');
 //var notify          = require('gulp-notify');
 var plumber = require('gulp-plumber');
 /*var browserify  = require('browserify');
@@ -41,32 +45,39 @@ gulp.task('browser-sync',['sass'], function() {
  * Compress images
  */
 gulp.task('img', function() {
-  gulp.src('img/src/*.{png,jpg,gif}')
+  gulp.src('assets/*.{png,jpg,gif}')
     .pipe(imagemin({
       optimizationLevel: 7,
       progressive: true
     }))
     .pipe(gulp.dest('img'))
 });
+gulp.task('tinypng', function () {
+    gulp.src('src/**/*.png')
+        .pipe(tinypng('API_KEY'))
+        .pipe(gulp.dest('compressed_images'));
+});
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('_scss/main.scss')
-         .pipe(plumber({
+    return gulp.src('_scss/main.scss',{ sourcemap: true, style: 'compact'})
+        .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err.message);
                 this.emit('end');
             }
         }))
+        .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: ['scss'],
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(browserSync.reload({stream:true, match: '**/*.css'}));
  /*       .pipe(gulp.dest('css'))
         .pipe(notify('<%= file.relative %>'))
         .pipe(notify({message: 'Css created', onLast: true}));*/

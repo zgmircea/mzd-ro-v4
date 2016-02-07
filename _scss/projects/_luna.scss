@@ -1,0 +1,360 @@
+$lunaColor: #F4E2D4;
+$lunaColorDrk:#ED7789;
+$lunaHighlight:#F4D2C8;
+.luna {
+    background: $lunaColor;
+    color: #D66D79;
+    .highlight-bg {
+        background: $lunaHighlight;
+        height: 10%;
+    }
+    .content-bg {
+        height: 10%;
+        background: $lunaColorDrk;
+    }
+    h3,
+    h4 {
+        color: $lunaColorDrk;
+        border-color: $lunaColorDrk;
+    }
+    h3:before {
+        background: $lunaColorDrk;
+    }
+    header {
+        color: #fff;
+        em {
+            color: #333
+        }
+        h3,
+        h4 {
+            color: $lunaHighlight;
+            border-color: $lunaHighlight;
+        }
+        h3:before {
+            background: $lunaHighlight;
+        }
+    }
+    .hero {
+        height: 800px;
+        img {
+            top: 10%;
+            left: 50%;
+            margin-left: -210px;
+        }
+    }
+    .analisys {
+        img {
+            margin-top: 80px;
+            max-width: 100%;
+        }
+    }
+    .imac {
+        margin: auto;
+        img {
+            animation: lunaimg-scroll 15s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1);
+        }
+    }
+    .single-feature {
+        p {
+            color: #fff;
+        }
+    }
+    .phone {
+        margin: auto;
+    }
+    .result {
+        margin-bottom: 600px;
+        p {
+            width: 60%;
+            margin: 180px auto 0px auto;
+        }
+        .sec {
+            margin-top: 20px;
+        }
+        .highlight-bg {
+            top: 100px;
+            background: $lunaColorDrk;
+        }
+        .window {
+            bottom: -450px;
+            h4 {
+                color: #fff;
+            }
+        }
+    }
+    .window {
+        &::before {
+            border-color: $lunaColorDrk;
+        }
+        h4 {
+            margin-left: 37px;
+            color: $lunaColorDrk;
+        }
+        &.green h4 {
+            color: $lunaColorDrk;
+        }
+    }
+    .full {
+        color: #333;
+    }
+    .flow {
+        opacity: 0.6;
+        max-width: 100%;
+    }
+    .user-card {
+        display: inline-block;
+        width: 47%;
+        background: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+        padding: 2% 5%;
+        box-sizing: border-box;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        font-size: 0.8em;
+        vertical-align: top;
+        figure {
+            margin: 0;
+            @media (max-width: $xs) {
+                width: 30%;
+            }
+        }
+        header {
+            margin: 0px 0px 30px 0px;
+            .span_9 {
+                @media (max-width: $xs) {
+                    width: 70%;
+                }
+            }
+            em{
+                @media (max-width: $xs) {
+                   font-size: 0.8em;
+                }
+            }
+        }
+        h6 {
+            font-size: 1em;
+            margin: 10px 0px 0px 0px;
+        }
+        strong {
+            color: #333;
+            display: block;
+            margin: 10px 0px;
+        }
+        blockquote {
+            margin: 0px;
+        }
+        .container {
+            margin-right: 0px;
+            width: 100%;
+        }
+        &.fade {
+            opacity: 0.5;
+        }
+        @media (max-width: $xs) {
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+        }
+    }
+    .drops {
+        margin-top: 100px;
+    }
+    .ui-holder {
+        position: relative;
+        h3 {
+            position: relative;
+            top: 300px;
+            left: 50%;
+            margin-left: -700px;
+            z-index: 1;
+            @media (max-width: $xs) {
+                margin-left: 0px;
+                position: static;
+            }
+        }
+        h4 {
+            position: relative;
+            top: 500px;
+            left: 70%;
+            z-index: 1;
+            @media (max-width: $xs) {
+                position: static;
+            }
+        }
+    }
+}
+
+@keyframes lunaimg-scroll {
+    0% {
+        transform: translateY(0px) translateZ(0);
+    }
+    100% {
+        transform: translateY(330px-773px) translateZ(0);
+    }
+}
+
+#lunaUI {
+    width: 476px;
+    height: 687px;
+    background: url("../projects/luna/interactive/drop.png") no-repeat;
+    position: relative;
+    margin: auto;
+    color: #BF5279;
+    div {
+        position: absolute;
+    }
+    .light {
+        top: 80px;
+        left: 235px;
+        z-index: 3;
+        width: 188px;
+        height: 431px;
+        background: url("../projects/luna/interactive/drop-highlight.png") no-repeat;
+        z-index: 2;
+        &:after,
+        &:before {
+            position: absolute;
+            top: 387px;
+            left: -120px;
+            display: block;
+            content: "";
+            width: 313px;
+            height: 176px;
+            background: url("../projects/luna/interactive/drop-highlight-bottom.png") no-repeat;
+        }
+        &:before {
+            top: -80px;
+            left: -235px;
+            width: 476px;
+            height: 687px;
+            background: url("../projects/luna/interactive/drop.png") no-repeat;
+        }
+    }
+    .shadow {
+        bottom: 56px;
+        left: 70px;
+        z-index: 4;
+        width: 334px;
+        height: 106px;
+        background: url("../projects/luna/interactive/drop-shadow.png") no-repeat;
+    }
+    .drop {
+        mask-image: url("../projects/luna/interactive/drop-svg.svg");
+        width: 370px;
+        height: 551px;
+        top: 80px;
+        left: 53px;
+        z-index: 1;
+    }
+    .liquid {
+        z-index: 1;
+        width: 476px;
+        height: 687px;
+        top: 400px;
+        left: -50px;
+        background: url("../projects/luna/interactive/optimised.svg") no-repeat 0px 0px;
+        position: relative;
+        animation: lunaui-scroll 19s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1);
+        &:after,
+        &:before {
+            position: absolute;
+            display: block;
+            top: 10px;
+            left: -200px;
+            content: "";
+            width: 230%;
+            height: 100%;
+            //-webkit-mask-image: url("../projects/luna/interactive/optimised.svg");
+            mask-image: url("../projects/luna/interactive/optimised.svg");
+            background: rgba(240, 102, 122, 0.5);
+            z-index: 2;
+            animation: lunaui-waterShake 5s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1);
+        }
+        &:before {
+            top: 20px;
+            left: -400px;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.1);
+            animation-direction: reverse;
+        }
+    }
+    h4 {
+        position: absolute;
+        z-index: 2;
+        top: 40px;
+        left: 110px;
+        font-size: 13em;
+        text-shadow: 30px 30px 0px rgba(0, 0, 0, 0.04), -1px -1px 0px rgba(255, 255, 255, 0.2);
+        text-align: center;
+        width: 250px;
+        margin: 0;
+        @media (max-width: $xs) {
+            font-size: 8em;
+            top: 150px;
+        }
+    }
+    p {
+        position: absolute;
+        font-size: 1.5em;
+        top: 500px;
+        left: 160px;
+        z-index: 2;
+        @media (max-width: $xs) {
+            font-size: 1em;
+            left: 145px;
+        }
+    }
+    .bubble {
+        display: block;
+        position: absolute;
+        width: 117px;
+        height: 117px;
+        right: -30px;
+        top: 200px;
+        z-index: 2;
+        background: url("../projects/luna/interactive/bubble.png");
+        animation: lunaui-bubbles 19s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1);
+        transform: scale(0);
+        &.wait {
+            background-position: -117px 0px;
+            left: -40px;
+            right: auto;
+        }
+    }
+}
+
+@keyframes lunaui-bubbles {
+    0% {
+        transform: scale(0) translateZ(0);
+    }
+    83% {
+        transform: scale(0) translateZ(0);
+    }
+    85% {
+        transform: scale(1.1) translateZ(0);
+    }
+    90% {
+        transform: scale(1) translateZ(0);
+    }
+    100% {
+        transform: scale(1) translateZ(0);
+    }
+}
+
+@keyframes lunaui-scroll {
+    0% {
+        transform: translateY(0px) translateZ(0);
+    }
+    100% {
+        transform: translateY(330px-687px) translateZ(0);
+    }
+}
+
+@keyframes lunaui-waterShake {
+    0% {
+        transform: translateX(0px) rotate(0deg) translateZ(0);
+    }
+    100% {
+        transform: translateX(-87px) rotate(5deg) translateZ(0);
+    }
+}

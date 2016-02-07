@@ -1,0 +1,154 @@
+.batteriesshack{
+    .highlight-bg{
+        background: #06B805;
+        height: 12%;
+    }
+    .content-bg{
+        height: 18%;
+    }
+    h3, h4{
+        color: #06B805;
+        border-color: #06B805;
+    }
+    h3.white{
+        color:#fff;
+        border-color: #fff;
+    }
+    h3:before{
+        background: #06B805;
+    }
+    .hero{
+        height: 800px;
+        
+        img:first-child{
+            top: 65%;
+            left: 35%;
+            z-index: 2;
+        }
+        
+        img:nth-child(2){
+            top: 15%;
+            left: 30%;
+            z-index: 1;
+        }
+        img:nth-child(3){
+            animation: img-flicker 3s infinite;
+        }
+    }
+    .testimonials{
+        margin-top: 600px;
+        margin-bottom: 300px;
+        
+        .window{
+            margin-top: -350px;
+        }
+    }
+    .values{
+        margin-top: 300px;
+        .col{
+            z-index: 2;
+            position: relative;
+        }
+        .items{
+            display: inline-flex;
+        }
+        .highlight-bg{
+            transform: skew(0, 4deg);
+            width: 140%;
+            margin-left: -20%;
+            top:150px;
+        }
+    }
+    .result{
+        p{
+            padding-top: 100px;
+            width: 50%;
+            margin: auto;
+        }
+        margin-bottom: 200px;
+        .highlight-bg{
+            height: 90%;
+            min-height: 90%;
+            }
+    }
+    .single-feature{
+        p{
+            width: 60%;
+            margin: auto;
+        }
+    }
+}
+
+@keyframes img-flicker {
+    0% {
+        opacity:0.5; 
+    }
+    5% {
+        opacity:1; 
+    }
+    70% {
+        opacity:1; 
+    }
+    75% {
+        opacity:0.5; 
+    }
+    100% {
+        opacity:1;
+    } 
+}
+.sack{
+    display: block;
+    width: 150%;
+}
+.testies{
+    display: inline-block;
+    width:350px;
+    height:147px;
+    background:url("../projects/batteriesshack/testies.png") no-repeat;
+    opacity: 0.3;
+    position: relative;
+    &:first-child{
+         transform: perspective( 1200px ) rotateY( -45deg );
+    }
+    &:nth-child(2){
+        background-position: -360px 0px;
+        margin: 0px -30px 0px -30px;
+        opacity: 1;
+        transform: scale(1.2);
+        z-index: 2;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+    }
+     &:nth-child(3){
+        transform: perspective( 1200px ) rotateY( 45deg );
+    }
+    @media (max-width: $capm){
+        transform: scale(0.8) !important;
+    }
+}
+.value{
+    margin-top: 80px;
+    display: inline-block;
+    width:150px;
+    height:1px;
+    background:url("../projects/batteriesshack/values.png") no-repeat;
+    text-align: center;
+    padding-top: 160px;
+    margin: 35px auto;
+    
+    &:nth-child(2){
+        background-position: -160px 0px;
+        margin-top: 55px;
+    }
+    &:nth-child(3){
+        background-position: -160px 0px;
+        margin-top: 75px;
+    }
+    &:nth-child(4){
+        background-position: -320px 0px;
+        margin-top: 95px;
+    }
+    &:nth-child(5){
+        background-position: -480px 0px;
+        margin-top: 115px;
+    }
+}

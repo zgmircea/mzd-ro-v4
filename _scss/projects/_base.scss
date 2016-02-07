@@ -1,0 +1,266 @@
+.project {
+    width: 100%;
+    min-height: 900px;
+    z-index: 2;
+    height: 100%;
+    position: relative;
+    padding-top: 50px;
+    margin-top: 150px;
+    .content-bg {
+        top: 0px;
+        width: 100%;
+        height: 70%;
+        min-height: 400px;
+        transform: skew(0, -3deg);
+    }
+    .highlight-bg {
+        top: 0px;
+        width: 100%;
+        min-height: 300px;
+        height: 70%;
+        transform: skew(0, 8deg);
+        transform-origin: top;
+    }
+    .hero {
+        overflow: hidden;
+        position: relative;
+        img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            max-width: 100%;
+        }
+    }
+    .container {
+        z-index: 3;
+        position: relative;
+        width: 80%;
+        margin-bottom: 200px;
+    }
+    h3.container {
+        margin-bottom: 0px;
+    }
+    .single-feature {
+        img {
+            margin-top: 50px;
+            max-width: 100%;
+        }
+    }
+    .single-feature.center {
+        p {
+            padding: 5%;
+        }
+    }
+    h4 {
+        color: #fff;
+        font-size: 2em;
+    }
+}
+
+.imac,
+.phone {
+    width: 627px;
+    height: 496px;
+    background:url("#{$imageBase}imac.png") no-repeat;
+    position: relative;
+    .inner-clip {
+        width: 580px;
+        height: 330px;
+        left: 24px;
+        position: relative;
+        background: $accent;
+        overflow: hidden;
+        top: 25px;
+    }
+    img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        animation: img-scroll 35s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+    &:after {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        background:url("#{$imageBase}imac.png") no-repeat;
+        top: 0px;
+    }
+    &:hover img {
+        animation-play-state: paused !important;
+    }
+}
+
+@keyframes img-scroll {
+    0% {
+        transform: translateY(0px) translateZ(0);
+    }
+    100% {
+        transform: translateY(-70%) translateZ(0);
+    }
+}
+
+.container.full {
+    margin-top: 300px;
+    .col {
+        z-index: 2;
+        position: relative;
+    }
+    .highlight-bg {
+        transform: skew(0, 4deg);
+        width: 140%;
+        margin-left: -20%;
+        top: 150px;
+    }
+}
+
+.window {
+    border: 10px solid #06B805;
+    padding: 5%;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    &:after,
+    &:before {
+        position: absolute;
+        content: " ";
+        display: block;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        border: 10px solid rgba(0, 0, 0, 0.15);
+    }
+    &:before {
+        border-color: #06B805;
+        z-index: 3;
+        top: -10px;
+        left: -10px;
+    }
+    h4 {
+        font-size: 6em;
+        position: relative;
+        z-index: 4;
+        margin: 50px 100px;
+        color: #fff;
+        
+         @media (max-width: $capm){
+            font-size: 4em;
+        }
+    }
+}
+
+.phone {
+    width: 455px;
+    height: 535px;
+    background:url("#{$imageBase}m-phone.png") no-repeat;
+    .inner-clip {
+        width: 217px;
+        height: 360px;
+        top: 70px;
+        left: 26px;
+    }
+    &:after {
+        background:url("#{$imageBase}m-phone.png") no-repeat;
+    }
+    img {
+        max-width: none;
+        max-height: 100%;
+        height: 100%;
+        width: auto;
+        animation: phone-scroll 20s infinite normal cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+    &:hover .swipe .inner {
+        animation-play-state: paused !important;
+    }
+}
+.swipe {
+    position: absolute;
+    left: 7%;
+    top: 65%;
+    width: 200px;
+    height: 50px;
+    z-index: 10;
+    
+    .inner {
+        opacity: 0;
+        border: 5px solid #FFF;
+        border-radius: 50%;
+        margin-top: 5px;
+        height: 30px;
+        width: 30px;
+        animation: circles 5s ease-out infinite, swipe 5s ease-out infinite;
+        animation-delay: 3s;
+    }
+}
+
+@keyframes phone-scroll {
+    0% {
+        transform: translatex(0px) translateZ(0);
+    }
+    20% {
+        transform: translatex(0%) translateZ(0);
+    }
+    25% {
+        transform: translatex(-25%) translateZ(0);
+    }
+    45% {
+        transform: translatex(-25%) translateZ(0);
+    }
+    50% {
+        transform: translatex(-50%) translateZ(0);
+    }
+    70% {
+        transform: translatex(-50%) translateZ(0);
+    }
+    75% {
+        transform: translatex(-75%) translateZ(0);
+    }
+    95% {
+        transform: translatex(-75%) translateZ(0);
+    }
+    100% {
+        transform: translatex(0%) translateZ(0);
+    }
+}
+
+@keyframes swipe {
+    0% {
+        transform: translateX(160px);
+    }
+    20% {
+        transform: translateX(160px);
+    }
+    30% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes circles {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 0.7;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@import "projects/batteriesshack";
+@import "projects/adtools";
+@import "projects/netective";
+@import "projects/luna";

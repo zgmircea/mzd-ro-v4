@@ -69,3 +69,4 @@ gulp.1
 # Brackets
 # =========================
 .brackets.json
+.htaccess

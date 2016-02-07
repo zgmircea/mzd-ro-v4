@@ -9,6 +9,8 @@ $footerheight: 50px;
 /* Colors */
 $bg: #2B2E3F;
 $bglite: #33374B;
+$bgdark: darken($bg, 10%);
+
 $text-gold:#7D744C; 
 $accent: #6DDBCE;
 
@@ -16,14 +18,19 @@ $text: #FFF;
 $links: $accent;
 $hover: #4CB7D3;
 
+$purple: #BE4EC4;
+$bluish: #85A3D5;
+
 /* Fonts */
 $main: 'Open Sans', sans-serif;
 
 /* Borders */
 $border: 1px solid #fff;
+$shadow:  1px 1px 5px rgba(0,0,0,0.3);
 
 /* Breakpoints */
 $cap: 1920px;
+$capm: 1375px;
 $m: 850px;
 $s: 740px;
 $xs: 500px;

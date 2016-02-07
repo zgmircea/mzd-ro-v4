@@ -1,0 +1,145 @@
+$netColor: #8DA4BD;
+$netColorDrk:#566E8A;
+$netHighlight:#94DC56;
+.netective {
+    background: $netColor;
+    color: #fff;
+    .highlight-bg {
+        background: $netHighlight;
+        height: 5%;
+    }
+    .content-bg {
+        height: 5%;
+        background: $netColorDrk;
+    }
+    h3,
+    h4 {
+        color: $netHighlight;
+        border-color: $netHighlight;
+    }
+    h3.white {
+        color: #fff;
+        border-color: #fff;
+        &:before {
+            background: #fff;
+        }
+    }
+    h3:before {
+        background: $netHighlight;
+    }
+    header {
+        color: #fff;
+    }
+    .hero {
+        height: 465px;
+        img:first-child {
+            top: 10%;
+            left: 50%;
+            margin-left: -330px;
+            z-index: 2;
+        }
+        img:last-child {
+            top: 45%;
+            left: 0%;
+            z-index: 3;
+        }
+    }
+    .doc {
+        display: inline-block;
+        margin-left: -100px;
+        position: relative;
+        &:first-child {
+            margin: 0px;
+        }
+        &:after {
+            content: "";
+            display: block;
+            background: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+        img {
+            position: relative;
+            z-index: 2;
+            transform: perspective( 1200px) rotateY( 45deg);
+        }
+        @media (max-width: $xs){   
+            margin-left: -240px;
+        }
+    }
+    .analisys {
+        img {
+            margin-top: 80px;
+        }
+    }
+    .wires {
+        p {
+            margin: 50px auto auto auto;
+            width: 50%;
+            @media (max-width: $xs){   
+                width: 100%;
+                margin: auto;
+            }
+        }
+        .highlight-bg {
+            height: 100%;
+        }
+    }
+    .imac {
+        margin: auto;
+        img {
+            animation: netimg-scroll 15s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1);
+        }
+    }
+    .single-feature{
+        p{
+            color: #fff;
+        }
+    }
+    .result {
+        p {
+            width: 60%;
+            margin: 180px auto 0px auto;
+        }
+        .sec {
+            margin-top: 20px;
+        }
+        .highlight-bg {
+            top: 100px;
+        }
+    }
+    .window {
+        &::before {
+            border-color: $netColorDrk;
+        }
+        h4 {
+            margin-left: 37px;
+            color: $netColorDrk;
+        }
+        &.green h4{
+            color: $netHighlight;
+        }
+    }
+    .logo {
+        img {
+            margin: 100px auto;
+            display: block;
+        }
+    }
+    .full{
+        color: #333;
+    }
+}
+
+@keyframes netimg-scroll {
+    0% {
+        transform: translateY(0px) translateZ(0);
+    }
+    100% {
+        transform: translateY(330px-773px) translateZ(0);
+    }
+}

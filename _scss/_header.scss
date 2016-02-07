@@ -1,14 +1,16 @@
 #head{
 	width:100%;
+    height: 100%;
 	min-height:900px;
 	z-index:2;
-    height:100%;
+    height:1400px;
+    position: relative;
     
     .content-bg{
         width: 3500px;
         height: 3500px;
         transform: rotate(45deg);
-        top: -268%;
+        top: -2866px;
         margin-left: -1750px;
         left: 50%;
         
@@ -29,6 +31,10 @@
             bottom: 137px;
             transform: rotate(87deg);
         }
+        
+        @media screen and (max-width: $capm){
+            top: -3037px;
+        }
     }
     .highlight-bg{
         top: 25%;
@@ -39,6 +45,8 @@
     }
     h1{
         width: 100%;
+        z-index: 3;
+        position: relative;
     }
 
 }
@@ -67,13 +75,37 @@
     -webkit-perspective: 1000;
     -webkit-transform: translate3d(0,0,0);
     
+    @media screen and (max-width: $capm){
+        width: 95%;
+        top:0px;
+    }
+    @media (max-width: $xs){   
+        top: 150px;
+    }
 }
 
 #mestylez{
     position: absolute;
-    top: 296px;
+    top: 90px;
     left: 50%;
-    margin-left: -259px;
+    width: 853px;
+    height: 853px;
+    z-index: 0;
+    margin-left: -425px;
+    background: $bglite;
+    transform: rotate(45deg);
+    overflow: hidden;
+    z-index: 0;
+    
+    img{
+        transform: rotate(-45deg);
+        margin-top: 132px;
+        margin-left: 224px;
+    }
+    
+    @media screen and (max-width: $capm){
+        top: 20px;
+    }
 }
 
 #hero span{
@@ -89,6 +121,19 @@
     left: 154px;
     -webkit-animation-delay: 700ms; /* Chrome, Safari, Opera */
     animation-delay: 700ms;
+    
+    
+    @media screen and (max-width: $capm){
+        left: 54px;
+    }
+     @media (max-width: $xs){
+        top: -130px;
+        left: auto;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8em;
+        z-index: 10;
+    }
 }
 .mircea{
     font-size: 82px;
@@ -106,14 +151,20 @@
         bottom: 0px;
         right: 0px;
     }
+    
+    @media screen and (max-width: $capm){
+       font-size: 62px;
+    } 
 }
 .and{
-    top: 125px;
+    width: 600px;
+    height: 600px;
+    margin-left: -291px;
+    top: 126px;
     font-weight: 100;
     text-align: center;
     letter-spacing: 8px;
     left: 50%;
-    margin-left: -50px;
     -webkit-animation-delay: 500ms; /* Chrome, Safari, Opera */
     animation-delay: 500ms;
 }
@@ -128,8 +179,8 @@
     margin-left: -300px;
     left: 50%;
     
-    &:before{
-        top: 94px;
+    &::before{
+        top: 170px;
         right: -90px;
         width: 120%;
         height: 67%;
@@ -138,7 +189,11 @@
         content: " ";
         display: block;
         background-color: rgba(0,0,0,0.3);
-        mask:url("#{$imageBase}designer.svg") no-repeat 50% 50%;
+        mask:url("#{$imageBase}designer.svg#maskid") no-repeat 50% 50%;
+        -webkit-clip-path: url(#{$imageBase}designer.svg#clip-svg-demo);
+        clip-path: url(#{$imageBase}designer.svg#clip-svg-demo);
+        mask-position:0px 0px;
+        
         transform: skewY(-6deg);
         transform-origin: top right;
         //mask-position: 700px 150px;
@@ -149,40 +204,138 @@
         width: 115%;
         height: 100%;
         z-index: 2;
+        transition: all 500ms ease;
     }
-    &::after{
+   
+}
+#square {
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    top: 250px;
+    width: 610px;
+    z-index: 2;
+    transition: all 1500ms ease;
+
+    img{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    
+    &:after{
         position: absolute;
         z-index: 1;
         content: " ";
         display: block;
         width: 71%;
-        height: 67%;
-        margin-top: 10px;
+        height: 60%;
         border: 12px solid rgba(0,0,0,0.3);
-        top: 106px;
-        left: 108px;
+        top: 126px;
+        left: 60px;
         transform: rotate(35deg) skewY(10deg);
     }
+    &.is-open{
+        transition: all 1400ms ease;
+        top: 325px;
+        
+        @media screen and (max-width: $capm){
+            top:225px;
+        }
+    }
+    
+    @media screen and (max-width: $capm){
+        top:150px;
+    }
+    @media (max-width: $xs){   
+        top: 300px;
+    }
 }
+
+#square.second-pos{
+    top: 1459px;
+    left: 240px;
+    width: 1200px;
+    height: 1200px;
+    transform: rotate(51deg);
+    
+    &:after{;
+        top: 270px;
+        left: 145px;
+        transform: rotate(35deg) skewY(0deg);
+    }
+    
+    @media screen and (min-width: 1800px){
+        left:140px;
+    }
+    
+}
+#square.third-pos{
+    top: 2290px;
+    left: 102%;
+    width: 1000px;
+    height: 1000px;
+    transform: rotate(176deg);
+    
+    &:after{
+       
+    }
+}
+
 /* push the designer font over the square */
 #letter-push{
+    position: absolute;
+    left: 50%;
+    margin-left: -291px;
+    top: 387px;
+    width: 601px;
+    z-index: 3;
+    transition: all 600ms ease;
+    font-size: 2em;
+    
     &:after, &:before{
+        display: inline-block;
         z-index: 10;
         width: 90px;
-        height: 170px;
+        height: 78px;
         position: absolute;
         content: " ";
         background-color:#fff;
-        mask:url("#{$imageBase}designer.svg") no-repeat;
+        mask:url("#{$imageBase}designer.svg#clip-svg-square") no-repeat;
+        -webkit-clip-path: url(#{$imageBase}designer.svg#bigd);
+        clip-path: url(#{$imageBase}designer.svg#bigd);
         mask-size: 690px 600px;
         mask-position: -79px;
-        top: 90px;
-        left: -171px;
+        top: 135px;
+        left: 70px;
     }
     &:before{
-        right: -298px;
+        height: 131px;
+        right: -42px;
         left: auto;
-        mask-position: -579px;
+        top: 116px;
+        mask-position:-561px -242px;
+        -webkit-clip-path: url(#{$imageBase}designer.svg#finalr);
+        clip-path: url(#{$imageBase}designer.svg#finalr);
+    }
+    
+    &.is-open{
+        transition: all 1400ms ease;
+        top: 471px;
+        
+        @media screen and (max-width: $capm){
+            top:372px;
+        }
+    }
+    
+    @media screen and (max-width: $capm){
+        top:287px;
+        margin-left: -293px;
+    }
+    @media (max-width: $xs){   
+        top: 456px;
+        font-size: 1.3em;
     }
 }
 .craft{
@@ -198,6 +351,12 @@
     background:url("#{$imageBase}selector.png") 0px 0px no-repeat;
     box-sizing: border-box;
     padding: 40px 50px;
+    z-index: 2;
+
+    @media (max-width: $xs){   
+        top: auto;
+        bottom: 80px;
+    }
 }
 
 #head hgroup::before,
@@ -260,14 +419,20 @@
 }
 
 
-.revealOnScroll { opacity: 0; }
-
-
 .scroll-hint{
     position: absolute;
-    bottom:40px;
+    top: 14%;
     left: 50%;
     margin-left: -19%;
+    z-index: 21;
+    @media screen and (max-width: $capm){
+        left: auto;
+        right: 10%;
+        bottom:-20px;
+    }
+    @media (max-width: $xs){
+        display: none;
+    }
 }
 
 
@@ -275,23 +440,22 @@
     display:block;
     text-indent:-999px; 
     background-image:url("#{$imageBase}diamonds.png");
-    transition: all 500ms ease;
-    
+    background-repeat: no-repeat;
     transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
     -webkit-transform: translate3d(0,0,0) rotate(0deg);
     transform: translate3d(0,0,0) rotate(0deg);
     
-	position:absolute;
+	position:fixed;
 	z-index:20;
-
+    
      &.shadowed:after{
         content:" ";
         display: block;
         position: absolute;
-        border-right: 25px solid rgba(0,0,0,0.2);
-        border-bottom: 25px solid rgba(0,0,0,0.2);
+        border-right: 25px solid rgba(0,0,0,0.1);
+        border-bottom: 25px solid rgba(0,0,0,0.1);
         bottom: -25px;
         right: -25px;
         width:100%;
@@ -300,9 +464,10 @@
     &.bigblue{
         width:288px;
         height:288px;
-        background-position:0px 0px;
+        background-position:2px 0px;
         top: -150px;
         left: 10%;
+        transform: rotate(-180px);
     }
     &.green{
         width:150px;
@@ -310,9 +475,11 @@
         background-position:-288px 0px;
         top: 50px;
         right: 15%;
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
         
-      
+        @media screen and (max-width: $capm){
+            display: none;
+	    }
     }
     &.smallblue{
         width:72px;
@@ -335,6 +502,10 @@
         background-position:-510px 0px;
         bottom: 90px;
         right: 170px;
+        
+        @media screen and (max-width: $capm){
+            display: none;
+	    }
     }
     &.dddgrey{
         width:103px;
@@ -349,5 +520,20 @@
         background-position:-804px 0px;
         top: 50px;
         left: 35%;
+        @media screen and (max-width: $capm){
+            left: auto;
+            right: 15%;
+	    }
+    }
+    &.shade{
+        background: none;
+        top: 700px;
+        left: 25%;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 100px 0 100px 150px;
+        border-color: transparent transparent transparent rgba(0,0,0,0.1);
+        border-radius: 10px;
     }
 }

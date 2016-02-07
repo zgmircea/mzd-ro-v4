@@ -10,6 +10,10 @@ body, input, textarea {
 	font-family: $main;
 	font-size: 16px;
 	line-height: 1.625;
+    
+    @media (max-width: $xs){   
+        font-size: 30px;
+    }
 }
 
 /* Headings */
@@ -38,6 +42,10 @@ h3 {
         position: relative;
         bottom: 0px;
         right: 0px;
+    }
+    @media (max-width: $xs){   
+        width:100%;
+        text-align: center;
     }
 }
 h4 {

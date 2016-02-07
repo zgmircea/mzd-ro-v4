@@ -26,12 +26,7 @@
 
 /* expertize
 ----------------------------------------------- */
-#expertise ul {
-  display: block;
-  margin: 0px auto;
-  padding: 0px;
-}
-#expertise li {
+.expertise{
   width: 254px;
   height: 154px;
   display: inline-block;
@@ -41,48 +36,43 @@
   position: relative;
   padding-top: 140px;
   transition: all 500ms ease;
+    margin: 0px auto;
 
 }
-#expertise .icon {
+.expertise .icon {
   font-size: 5em;
   position: absolute;
   z-index: 2;
-  left: 92px;
+  left: 50%;
+    margin-left: -30px;
+width: 63px;
   top: 80px;
   transition: all 500ms ease;
     opacity: 0.7;
     font-size: 60px;
 }
-#expertise li:hover .icon {
-  font-size: 6em;
-  left: 78px;
-  top: -20px;
+.expertise:hover .icon,
+#process li:hover .expertise .icon
+{
+    font-size: 6em;
+    top: -20px;
+    width: 83px;
+    margin-left: -45px;
+    text-shadow: 10px 10px rgba(0,0,0,0.7);
 }
-#expertise h4 {
+.expertise h4 {
     z-index: 2;
     position: relative;
     font-size: 1.2em;
-    top: 20px;
     color: #fff;
+    margin-top: 10px;
+    
+    &:after{
+        display: block;
+        content: " ";
+    }
 }
-#expertise p {
-  display: block;
-  position: absolute;
-  width: 300px;
-  left: -40px;
-top:250px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.2);
-  color: #fff;
-  z-index: 3;
-  opacity: 0;
-  border-radius: 5px;
-  transition: all 500ms ease;
-}
-#expertise li:hover p {
-  opacity: 1;
-}
-#expertise li:before {
+.expertise:before {
   display: block;
   width: 180px;
   height: 180px;
@@ -100,12 +90,13 @@ top:250px;
   transition: all 500ms ease;
 transform-origin: left;
 }
-#expertise li:hover:before {
+.expertise:hover:before,
+#process li:hover .expertise:before {
     transform: rotate(-90deg);
     border-color: transparent transparent transparent rgba(255, 255, 255, 0.4);
     //border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
 }
-#expertise li:after {
+.expertise:after {
   display: block;
   width: 180px;
   height: 180px;
@@ -119,39 +110,161 @@ transform-origin: left;
   box-sizing: border-box;
   transition: all 500ms ease;
 }
-#expertise li:hover:after {
-    transform: rotate(-45deg);
-    border-width: 90px;
-}
-li.red:after {
+
+.expertise.red:after {
   border: 15px solid #B6362B;
 }
-#expertise li.red:hover:after {
+.expertise.red:hover:after,
+#process li:hover .red:after {
   background-color: #B6362B;
   border-bottom-color:#7D251E;
 }
-li.green:after {
+.expertise.green:after {
   border: 15px solid #AECA64;
 }
-#expertise li.green:hover:after {
+.expertise.green:hover:after,
+#process li:hover .green:after {
   background-color: #AECA64;
   border-bottom-color:#84A036;
     
 }
-li.blue:after {
+.expertise.blue:after {
     border: 15px solid #5BB59C;
 }
-#expertise li.blue:hover:after {
+.expertise.blue:hover:after,
+#process li:hover .blue:after {
     background-color: #5BB59C;
     border-bottom-color:#408C77;
 }
-#expertise li:hover {
-  color: #fff;
+.expertise.purple:after {
+    border: 15px solid $purple;
+}
+.expertise.purple:hover:after,
+#process li:hover .purple:after{
+    background-color: $purple;
+    border-bottom-color: darken($purple, 10%);
+}
+.expertise.bluish:after {
+    border: 15px solid $bluish;
+}
+.expertise.bluish:hover:after,
+#process li:hover .bluish:after
+{
+    background-color: $bluish;
+    border-bottom-color: darken($bluish, 10%);
 }
 
+.expertise:hover:after,
+#process li:hover .expertise:after
+{
+    transform: rotate(-45deg);
+    border-width: 90px;
+}
 
+#process 
 /* =error404
 ----------------------------------------------- */
 .error404 {
     width: 75%;
+}
+
+
+.revealOnScroll {
+    opacity: 0; 
+    &.animated {
+        opacity:1;
+    }
+}
+
+
+/* =Loader
+----------------------------------------------- */
+.lcontainer {
+	display: none;
+}
+
+.lcontainer.show {
+	display: block;
+}
+
+.pageload-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+    z-index: 100;
+}
+
+.pageload-overlay.show {
+	visibility: visible;
+}
+
+.pageload-overlay svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.pageload-overlay svg path {
+	fill: $bglite;
+}
+
+.pageload-overlay::after,
+.pageload-overlay::before {
+	content: '';
+	position: fixed;
+	width: 20px;
+	height: 20px;
+	top: 50%;
+	left: 50%;
+	margin: -10px 0 0 -10px;
+	border-radius: 50%;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1000;
+	-webkit-transition: opacity 0.15s, visibility 0s 0.15s;
+	transition: opacity 0.15s, visibility 0s 0.15s;
+}
+
+.pageload-overlay::after {
+	background: #6cc88a;
+	-webkit-transform: translateX(-20px);
+	transform: translateX(-20px);
+	-webkit-animation: moveRight 0.6s linear infinite alternate;
+	animation: moveRight 0.6s linear infinite alternate;
+}
+
+.pageload-overlay::before {
+	background: #4fc3f7;
+	-webkit-transform: translateX(20px);
+	transform: translateX(20px);
+	-webkit-animation: moveLeft 0.6s linear infinite alternate;
+	animation: moveLeft 0.6s linear infinite alternate;
+}
+
+@-webkit-keyframes moveRight {
+	to { -webkit-transform: translateX(20px); }
+}
+
+@keyframes moveRight {
+	to { transform: translateX(20px); }
+}
+
+@-webkit-keyframes moveLeft {
+	to { -webkit-transform: translateX(-20px); }
+}
+
+@keyframes moveLeft {
+	to { transform: translateX(-20px); }
+}
+
+.pageload-loading.pageload-overlay::after,
+.pageload-loading.pageload-overlay::before {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
 }
