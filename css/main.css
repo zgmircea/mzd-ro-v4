@@ -3575,6 +3575,16 @@ input[type=submit] {
 .error404 {
   width: 75%; }
 
+#under {
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 10px 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+  font-size: 0.8em; }
+
 .revealOnScroll {
   opacity: 0; }
   .revealOnScroll.animated {
@@ -3627,7 +3637,7 @@ input[type=submit] {
   transition: opacity 0.15s, visibility 0s 0.15s; }
 
 .pageload-overlay::after {
-  background: #6cc88a;
+  background: #BE4EC4;
   -webkit-transform: translateX(-20px);
   -ms-transform: translateX(-20px);
       transform: translateX(-20px);
@@ -3635,7 +3645,7 @@ input[type=submit] {
   animation: moveRight 0.6s linear infinite alternate; }
 
 .pageload-overlay::before {
-  background: #4fc3f7;
+  background: #6DDBCE;
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
       transform: translateX(20px);
@@ -6433,13 +6443,13 @@ Copyright (c) 2015 Daniel Eden
     font-size: 2em; }
 
 .imac,
-.phone {
+.device {
   width: 627px;
   height: 496px;
   background: url("../assets/imac.png") no-repeat;
   position: relative; }
   .imac .inner-clip,
-  .phone .inner-clip {
+  .device .inner-clip {
     width: 580px;
     height: 330px;
     left: 24px;
@@ -6448,14 +6458,14 @@ Copyright (c) 2015 Daniel Eden
     overflow: hidden;
     top: 25px; }
   .imac img,
-  .phone img {
+  .device img {
     position: absolute;
     width: 100%;
     height: auto;
     -webkit-animation: img-scroll 35s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1);
             animation: img-scroll 35s infinite alternate cubic-bezier(0.65, 0.05, 0.36, 1); }
   .imac:after,
-  .phone:after {
+  .device:after {
     content: " ";
     display: block;
     width: 100%;
@@ -6465,7 +6475,7 @@ Copyright (c) 2015 Daniel Eden
     background: url("../assets/imac.png") no-repeat;
     top: 0px; }
   .imac:hover img,
-  .phone:hover img {
+  .device:hover img {
     -webkit-animation-play-state: paused !important;
             animation-play-state: paused !important; }
 
@@ -6530,27 +6540,38 @@ Copyright (c) 2015 Daniel Eden
       .window h4 {
         font-size: 4em; } }
 
-.phone {
+.device {
   width: 455px;
   height: 535px;
   background: url("../assets/m-phone.png") no-repeat; }
-  .phone .inner-clip {
+  .device .inner-clip {
     width: 217px;
     height: 360px;
     top: 70px;
     left: 26px; }
-  .phone:after {
+  .device:after {
     background: url("../assets/m-phone.png") no-repeat; }
-  .phone img {
+  .device img {
     max-width: none;
     max-height: 100%;
     height: 100%;
     width: auto;
     -webkit-animation: phone-scroll 20s infinite normal cubic-bezier(0.65, 0.05, 0.36, 1);
             animation: phone-scroll 20s infinite normal cubic-bezier(0.65, 0.05, 0.36, 1); }
-  .phone:hover .swipe .inner {
+  .device:hover .swipe .inner {
     -webkit-animation-play-state: paused !important;
             animation-play-state: paused !important; }
+  .device.ipad {
+    width: 318px;
+    height: 412px;
+    background: url("../assets/ipad.png") no-repeat; }
+    .device.ipad:after {
+      background: url("../assets/ipad.png") no-repeat; }
+    .device.ipad .inner-clip {
+      width: 255px;
+      height: 340px;
+      top: 36px;
+      left: 32px; }
 
 .swipe {
   position: absolute;
@@ -7438,5 +7459,116 @@ Copyright (c) 2015 Daniel Eden
   100% {
     -webkit-transform: translateX(-87px) rotate(5deg) translateZ(0);
             transform: translateX(-87px) rotate(5deg) translateZ(0); } }
+
+.samba {
+  background: #212121;
+  color: #FFF; }
+  .samba .highlight-bg {
+    background: #C7E55D;
+    height: 8%; }
+  .samba .content-bg {
+    height: 10%;
+    background: #7ACC5A; }
+  .samba h3,
+  .samba h4 {
+    color: #7ACC5A;
+    border-color: #7ACC5A; }
+  .samba h3:before {
+    background: #7ACC5A; }
+  .samba header {
+    color: #fff; }
+    .samba header em {
+      color: #333; }
+    .samba header h3,
+    .samba header h4 {
+      color: #C7E55D;
+      border-color: #C7E55D; }
+    .samba header h3:before {
+      background: #C7E55D; }
+  .samba .hero {
+    height: 800px; }
+    .samba .hero img {
+      top: 10%;
+      left: 50%;
+      margin-left: -150px; }
+    .samba .hero .phone {
+      left: 95%;
+      top: 20%; }
+    .samba .hero .logo {
+      top: 30%;
+      margin-left: 0px;
+      left: 17%; }
+  .samba .single-feature p {
+    color: #fff; }
+  .samba .device {
+    margin: auto; }
+  .samba .result {
+    margin-bottom: 600px; }
+    .samba .result p {
+      width: 60%;
+      margin: 80px auto 0px auto; }
+    .samba .result .sec {
+      margin-top: 20px; }
+    .samba .result .highlight-bg {
+      top: 0px;
+      height: 107%;
+      background: #7ACC5A; }
+    .samba .result .window {
+      bottom: -450px; }
+      .samba .result .window h4 {
+        color: #fff; }
+      .samba .result .window::before {
+        border-color: #C7E55D; }
+  .samba .window::before {
+    border-color: #7ACC5A; }
+  .samba .window h4 {
+    margin-left: 37px;
+    color: #7ACC5A; }
+  .samba .window.green h4 {
+    color: #7ACC5A; }
+  .samba .wires {
+    height: 600px;
+    position: relative; }
+    .samba .wires .highlight-bg {
+      -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+              box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+      background: url("../projects/samba/wires.jpg") no-repeat;
+      background-size: cover;
+      height: 80%;
+      -webkit-animation: samba-wires 30s infinite alternate linear;
+              animation: samba-wires 30s infinite alternate linear;
+      top: 350px; }
+    .samba .wires .center {
+      position: relative;
+      z-index: 1;
+      width: 70%;
+      margin: auto; }
+  .samba .wire {
+    position: absolute;
+    z-index: 1;
+    bottom: -300px;
+    left: 50%;
+    margin-left: -500px;
+    max-width: 100%; }
+  .samba .wirecont {
+    margin-top: 500px; }
+  .samba .push {
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
+  .samba .dongle {
+    margin-right: -50px;
+    z-index: 1; }
+
+@-webkit-keyframes samba-wires {
+  0% {
+    background-position: 0px 0px; }
+  100% {
+    background-position: 0px -510px; } }
+
+@keyframes samba-wires {
+  0% {
+    background-position: 0px 0px; }
+  100% {
+    background-position: 0px -510px; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,143 @@
+$sambaColor: #212121;
+$sambaColorDrk:#7ACC5A;
+$sambaHighlight:#C7E55D;
+.samba {
+    background: $sambaColor;
+    color: #FFF;
+    .highlight-bg {
+        background: $sambaHighlight;
+        height: 8%;
+    }
+    .content-bg {
+        height: 10%;
+        background: $sambaColorDrk;
+    }
+    h3,
+    h4 {
+        color: $sambaColorDrk;
+        border-color: $sambaColorDrk;
+    }
+    h3:before {
+        background: $sambaColorDrk;
+    }
+    header {
+        color: #fff;
+        em {
+            color: #333
+        }
+        h3,
+        h4 {
+            color: $sambaHighlight;
+            border-color: $sambaHighlight;
+        }
+        h3:before {
+            background: $sambaHighlight;
+        }
+    }
+    .hero {
+        height: 800px;
+        img {
+            top: 10%;
+            left: 50%;
+            margin-left: -150px;
+        }
+        .phone {
+            left: 95%;
+            top: 20%;
+        }
+        .logo {
+            top: 30%;
+            margin-left: 0px;
+            left: 17%;
+        }
+    }
+    .single-feature {
+        p {
+            color: #fff;
+        }
+    }
+    .device {
+        margin: auto;
+    }
+    .result {
+        margin-bottom: 600px;
+        p {
+            width: 60%;
+            margin: 80px auto 0px auto;
+        }
+        .sec {
+            margin-top: 20px;
+        }
+        .highlight-bg {
+            top: 0px;
+            height: 107%;
+            background: $sambaColorDrk;
+        }
+        .window {
+            bottom: -450px;
+            h4 {
+                color: #fff;
+            }
+            &::before {
+                border-color: $sambaHighlight;
+            }
+        }
+    }
+    .window {
+        &::before {
+            border-color: $sambaColorDrk;
+        }
+        h4 {
+            margin-left: 37px;
+            color: $sambaColorDrk;
+        }
+        &.green h4 {
+            color: $sambaColorDrk;
+        }
+    }
+    .wires {
+        height: 600px;
+        position: relative;
+        .highlight-bg {
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+            background: url("../projects/samba/wires.jpg") no-repeat;
+            background-size: cover;
+            height: 80%;
+            animation: samba-wires 30s infinite alternate linear;
+            top: 350px;
+        }
+        .center {
+            position: relative;
+            z-index: 1;
+            width: 70%;
+            margin: auto;
+        }
+    }
+    .wire {
+        position: absolute;
+        z-index: 1;
+        bottom: -300px;
+        left: 50%;
+        margin-left: -500px;
+        max-width: 100%;
+    }
+    .wirecont {
+        margin-top: 500px;
+    }
+    .push {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    }
+    .dongle {
+        margin-right: -50px;
+        z-index: 1;
+    }
+}
+
+@keyframes samba-wires {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 0px 500px-1010px;
+    }
+}

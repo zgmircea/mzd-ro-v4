@@ -58,7 +58,7 @@
 }
 
 .imac,
-.phone {
+.device {
     width: 627px;
     height: 496px;
     background:url("#{$imageBase}imac.png") no-repeat;
@@ -153,7 +153,7 @@
     }
 }
 
-.phone {
+.device {
     width: 455px;
     height: 535px;
     background:url("#{$imageBase}m-phone.png") no-repeat;
@@ -176,7 +176,23 @@
     &:hover .swipe .inner {
         animation-play-state: paused !important;
     }
+    
+    &.ipad {
+        width: 318px;
+        height: 412px;
+        background:url("#{$imageBase}ipad.png") no-repeat;
+        &:after {
+            background:url("#{$imageBase}ipad.png") no-repeat;
+        }
+        .inner-clip {
+            width: 255px;
+            height: 340px;
+            top: 36px;
+            left: 32px;
+        }
+    }
 }
+
 .swipe {
     position: absolute;
     left: 7%;
@@ -264,3 +280,4 @@
 @import "projects/adtools";
 @import "projects/netective";
 @import "projects/luna";
+@import "projects/samba";

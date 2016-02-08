@@ -169,6 +169,16 @@ transform-origin: left;
 }
 
 
+#under{
+    background:rgba(0,0,0,0.4);
+    text-align: center;
+    padding: 10px 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    font-size: 0.8em;
+}
 .revealOnScroll {
     opacity: 0; 
     &.animated {
@@ -230,7 +240,7 @@ transform-origin: left;
 }
 
 .pageload-overlay::after {
-	background: #6cc88a;
+	background: $purple;
 	-webkit-transform: translateX(-20px);
 	transform: translateX(-20px);
 	-webkit-animation: moveRight 0.6s linear infinite alternate;
@@ -238,7 +248,7 @@ transform-origin: left;
 }
 
 .pageload-overlay::before {
-	background: #4fc3f7;
+	background: $accent;
 	-webkit-transform: translateX(20px);
 	transform: translateX(20px);
 	-webkit-animation: moveLeft 0.6s linear infinite alternate;
