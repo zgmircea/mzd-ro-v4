@@ -9,7 +9,7 @@ $sambaHighlight:#C7E55D;
         height: 8%;
     }
     .content-bg {
-        height: 10%;
+        height: 11%;
         background: $sambaColorDrk;
     }
     h3,
@@ -49,6 +49,14 @@ $sambaHighlight:#C7E55D;
             top: 30%;
             margin-left: 0px;
             left: 17%;
+        }
+    }
+    .memo{
+        margin-top: 20px;
+        font-style: italic;
+        a{
+            color: #fff;
+            text-decoration: underline;
         }
     }
     .single-feature {

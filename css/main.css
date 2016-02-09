@@ -815,6 +815,21 @@ body {
       -ms-transform: rotate(176deg);
           transform: rotate(176deg); }
 
+#square.forth-pos {
+  top: 2290px;
+  left: 102%;
+  width: 800px;
+  height: 800px;
+  -webkit-transform: rotate(76deg);
+      -ms-transform: rotate(76deg);
+          transform: rotate(76deg);
+  z-index: 1; }
+
+#square.last-pos {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg); }
+
 /* push the designer font over the square */
 #letter-push {
   position: absolute;
@@ -6224,7 +6239,9 @@ Copyright (c) 2015 Daniel Eden
   margin-top: 300px; }
   #process ul {
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    position: relative;
+    z-index: 3; }
     #process ul:hover li {
       opacity: 0.5; }
     #process ul:hover li:hover {
@@ -6235,6 +6252,12 @@ Copyright (c) 2015 Daniel Eden
       width: 100%;
       height: 0.1px;
       clear: both; }
+  #process h3 {
+    position: relative;
+    z-index: 3;
+    top: 400px;
+    font-size: 5em;
+    text-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1); }
   #process li {
     width: 21%;
     float: left;
@@ -6250,13 +6273,13 @@ Copyright (c) 2015 Daniel Eden
     -webkit-border-radius: 10px;
             border-radius: 10px;
     -webkit-transition: all 700ms ease;
-    transition: all 700ms ease; }
+    transition: all 700ms ease;
+    /*.active, &:hover{
+            background: rgba(0,0,0,0.1);
+            box-shadow: 1px 1px 0px rgba(0,0,0,0.15);
+        }*/ }
     #process li p {
       padding: 0px 20px; }
-    #process li .active, #process li:hover {
-      background: rgba(0, 0, 0, 0.1);
-      -webkit-box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
-              box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15); }
     #process li:last-child {
       margin: 0px; }
     @media (max-width: 500px) {
@@ -6267,7 +6290,25 @@ Copyright (c) 2015 Daniel Eden
     text-align: center;
     color: #6DDBCE;
     font-size: 1.5em;
-    padding: 120px 0px; }
+    padding: 120px 0px;
+    top: -600px;
+    position: relative;
+    z-index: 1; }
+  #process:after {
+    content: "";
+    display: block;
+    width: 110%;
+    height: 80%;
+    top: 0px;
+    z-index: 2;
+    left: -5%;
+    -webkit-box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    background: #2B2E3F; }
+    @media (max-width: 500px) {
+      #process:after {
+        display: none; } }
 
 #work {
   position: relative;
@@ -6376,7 +6417,8 @@ Copyright (c) 2015 Daniel Eden
   margin-top: 200px;
   padding-bottom: 200px;
   font-size: 1.3em;
-  position: relative; }
+  position: relative;
+  z-index: 0; }
   #contact h3 {
     display: inline-block; }
   #contact a {
@@ -6387,13 +6429,6 @@ Copyright (c) 2015 Daniel Eden
       #contact a {
         display: block;
         margin: 40px 0px 0px 0px !important; } }
-  #contact:after {
-    content: "";
-    display: block;
-    width: 90%;
-    height: 100%;
-    -webkit-box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.3); }
 
 #results {
   height: 100%; }
@@ -7474,7 +7509,7 @@ Copyright (c) 2015 Daniel Eden
     background: #C7E55D;
     height: 8%; }
   .samba .content-bg {
-    height: 10%;
+    height: 11%;
     background: #7ACC5A; }
   .samba h3,
   .samba h4 {
@@ -7505,6 +7540,12 @@ Copyright (c) 2015 Daniel Eden
       top: 30%;
       margin-left: 0px;
       left: 17%; }
+  .samba .memo {
+    margin-top: 20px;
+    font-style: italic; }
+    .samba .memo a {
+      color: #fff;
+      text-decoration: underline; }
   .samba .single-feature p {
     color: #fff; }
   .samba .device {

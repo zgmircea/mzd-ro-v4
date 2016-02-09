@@ -83,7 +83,7 @@ jQuery(document).ready(function () {
         ajaxContainer = document.getElementById('results'),
         parallaxableCount = $parallaxable.length;
 
-    /**/
+      /**/
     var pageWrap = document.getElementById('page'),
         pages = [].slice.call(pageWrap.querySelectorAll('div.container')),
         currentPage = 0,
@@ -180,12 +180,24 @@ jQuery(document).ready(function () {
                     $(square).addClass('third-pos');
                 } else
                     $(square).removeClass('third-pos');
+                
+                if (c > square.dataset.forthStep) {
+                    $(square).addClass('forth-pos');
+                } else
+                    $(square).removeClass('forth-pos');
+                
+                if (c > square.dataset.lastStep) {
+                    $(square).addClass('last-pos');
+                } else{
+                    $(square).removeClass('last-pos');
+                }
             }
-
+      
             //check if first screen
             //if(c < 100){
             for (index = 0; index < parallaxableCount; index++) {
                 var $item = $parallaxable[index];
+                
                 var currentDelta = $item.dataset.currentDelta;
                 var newDelta = (0 - (scrollTop * $item.dataset.multiplier));
 
@@ -196,9 +208,13 @@ jQuery(document).ready(function () {
 
                 transformString = "translateY(" + tweenDelta + "px) translateZ(0)";
 
+                
                 if ($item.dataset.rotation) {
+                     transformString += " rotate(" + $item.dataset.rotation + ")";
+                }
+                if ($item.dataset.pita) {
                     pita = tweenDelta * Math.sqrt(2) / 2;
-                    transformString += " rotate(" + $item.dataset.rotation + ") translateX(" + pita + "px) ";
+                    transformString += " translateX(" + pita + "px) ";
                 }
                 if ($item.dataset.skew) {
                     transformString += " skew(" + $item.dataset.skew + ")";
@@ -236,8 +252,10 @@ jQuery(document).ready(function () {
     initSquare = function () {
         square.dataset.secondStep = ($('#about').offset().top + $('#about').height() / 2) * 50 / win_height_padded;
         square.dataset.thirdStep = ($('#process').offset().top + $('#process').height() / 2) * 50 / win_height_padded * 1.2;
+        square.dataset.forthStep = ($('#work').offset().top + $('#work').height() / 2) * 50 / win_height_padded * 1.2;
+        square.dataset.lastStep = ($('#contact').offset().top + 1000 + $('#contact').height() / 2) * 50 / win_height_padded * 1.3;
         //initialize the square jump values
-        $("<style>#square.second-pos {left : " + ($('#about article').offset().left - 80) + "px} #square.third-pos{top:" + ($('#process').offset().top - 550) + "px; left:102%;}</style>").appendTo("head");
+        $("<style>#square.second-pos {left : " + ($('#about article').offset().left - 80) + "px} #square.third-pos{top:" + ($('#process').offset().top - 550) + "px; left:102%;} #square.forth-pos{top:" + ($('#work').offset().top -300) + "px; left:20%;} #square.last-pos{top:" + ($('#contact').offset().top - 700) + "px; left:32%;}</style>").appendTo("head");
     }
 
     $window[0].onresize = function () {
