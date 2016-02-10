@@ -105,7 +105,7 @@ transform-origin: left;
   z-index: 1;
   top: 37px;
   left: 37px;
-  background: url("../assets/noise.png") 0px 0px;
+  //background: url("../assets/noise.png") 0px 0px;
   transform: rotate(45deg);
   box-sizing: border-box;
   transition: all 500ms ease;
@@ -219,7 +219,10 @@ transform-origin: left;
 }
 
 .pageload-overlay svg path {
-	fill: $bglite;
+	fill: $bg;
+}
+.pageload-overlay.preloading{
+    background: $bg;
 }
 
 .pageload-overlay::after,

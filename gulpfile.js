@@ -7,12 +7,12 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var imagemin = require('gulp-imagemin');
 var tinypng = require('gulp-tinypng');
+var imageOptim = require('gulp-imageoptim');
 var concat = require('gulp-concat');
 //var notify          = require('gulp-notify');
 var plumber = require('gulp-plumber');
-/*var browserify  = require('browserify');
-var uglify      = require('uglify');
-var imagemin = require('gulp-imagemin');*/
+var browserify  = require('gulp-browserify');
+var uglify      = require('gulp-uglify');
 
 /*
 npm install --save-dev gulp browser-sync gulp-sass gulp-autoprefixer gulp-imagemin gulp-plumber
@@ -45,16 +45,23 @@ gulp.task('browser-sync',['sass'], function() {
  * Compress images
  */
 gulp.task('img', function() {
-  gulp.src('assets/*.{png,jpg,gif}')
+  gulp.src('**/*.{jpg,gif}')
     .pipe(imagemin({
       optimizationLevel: 7,
       progressive: true
     }))
-    .pipe(gulp.dest('img'))
+    .pipe(gulp.dest('compressed_images'))
 });
+
+gulp.task('images', function() {
+    return gulp.src('**/*.{jpg,gif}')
+        .pipe(imageOptim.optimize())
+        .pipe(gulp.dest('compressed_images'));
+});
+
 gulp.task('tinypng', function () {
-    gulp.src('src/**/*.png')
-        .pipe(tinypng('API_KEY'))
+    gulp.src('projects/**/*.png')
+        .pipe(tinypng('rQ59GPnlxM6QQo0Q_Fb4KDi97umt2Gg8'))
         .pipe(gulp.dest('compressed_images'));
 });
 
@@ -86,10 +93,10 @@ gulp.task('sass', function () {
 // process JS files and return the stream.
 gulp.task('js', function () {
     return gulp.src('js/*js').pipe(browserSync.reload({stream:true}));
-/*    
+       /* .pipe(concat('concat.js'))
         .pipe(browserify())
         .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));*/
+        .pipe(gulp.dest('/fjs'));*/
 });
 gulp.task('js-watch',['js'], browserSync.reload);
 

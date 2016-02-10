@@ -72,6 +72,10 @@ jQuery(document).ready(function () {
     ------------- TODO When scrolled all way to bottom do as on android hint ----------------
        
     */
+    
+    // parallaxy-options='{"multiplier":"0.06", "direction":"up", "positionType": "relative"}'
+    
+    
     var scrollPosition = 0,
         $window = $(window),
         scrollTop = window.pageYOffset,
@@ -89,7 +93,8 @@ jQuery(document).ready(function () {
         currentPage = 0,
         triggerLoading = [].slice.call(pageWrap.querySelectorAll('a.pageload-link')),
         loader = new SVGLoader(document.getElementById('loader'), {
-            speedIn: 100
+            speedIn: 500,
+            easingIn : mina.easeinout
         });
 
     /** make screen adjustments */
@@ -145,9 +150,7 @@ jQuery(document).ready(function () {
 
     revealOnScroll = function () {
             scrollTop = window.pageYOffset;
-
             c = scrollTop * 100 / win_height_padded;
-
             var opacity = 1; //global scroll opacity
 
             if (c < 80) {
@@ -262,12 +265,9 @@ jQuery(document).ready(function () {
         initSquare()
     };
 
-    initSquare();
-
     /*
     --------------------- Hash navigation -------------------------
     */
-
     //history.pushState("", document.title, window.location.pathname);
 
     if (window.location.hash) {
@@ -299,14 +299,15 @@ jQuery(document).ready(function () {
             reload();
     };
     /*
-    ------------- PRE/LOADING ----------------
-    
-    loader.show(function(){
-        //once the loader is fully shown
-        $(window).load(function(){ 
-            loader.hide();
-        });
-    });*/
+    ------------- PRE/LOADING ----------------*/
+    loader.show();
+    $(window).load(function(){ 
+      setTimeout(function () {
+          loader.hide();
+          $('#loader').removeClass('preloading');
+          initSquare();
+        }, 1000);
+    });
 });
 
 /*

@@ -47,6 +47,11 @@
 </head>
 
 <body>
+    <div id="loader" class="pageload-overlay pageload-loading preloading show" data-opening="M 40,-65 145,80 -65,80 40,-65" data-closing="m 40,-65 0,0 L -65,80 40,-65">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+					<path d="M 40,-65 145,80 40,-65"/>
+				</svg>
+			</div><!-- /pageload-overlay -->
     <div id="flow-wrapper">
         <div id="menu-push"></div>
         <nav id="main-nav" class="mobile-nav">
@@ -98,7 +103,7 @@
 
             <section id="about" class="container parallaxable" data-current-delta="0" data-multiplier="0.1">
                 <article class="col span_5 revealOnScroll" data-animation="fadeInUp">
-                    <h3 parallaxy-options='{"multiplier":"0.06", "direction":"up", "positionType": "relative"}'>about <strong>me</strong></h3>
+                    <h3>about <strong>me</strong></h3>
                     <p>I have over 10 years experience in digital design with a focus on interface design and user experience. I’ve worked with a large variety of clients all around the world and have been involved in small projects to large corporate apps from concept through to detailed style guides. I put a lot of commitment into my work, seeking opportunities to deliver the best experience possible for any product I'm involved with. </p>
 
                     <p>I believe that collaboration and user centered design are key to creating great products & experiences. My background in computer science gives me the ability to understand the impact of my design decisions and gives me a wide perspective over the whole liefecycle of a project. </p>
@@ -199,14 +204,7 @@
         <!-- /page -->
         <div id="under">Please keep in mind that this website is still under development.</div>
         <!-- /page -->
-
-        <div id="loader" class="pageload-overlay" data-opening="M20,15 50,30 50,30 30,30 Z;M0,0 80,0 50,30 20,45 Z;M0,0 80,0 60,45 0,60 Z;M0,0 80,0 80,60 0,60 Z" data-closing="M0,0 80,0 60,45 0,60 Z;M0,0 80,0 50,30 20,45 Z;M20,15 50,30 50,30 30,30 Z;M30,30 50,30 50,30 30,30 Z">
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
-                <path d="M30,30 50,30 50,30 30,30 Z" />
-            </svg>
-        </div>
-        <!-- /pageload-overlay -->
-
+        
     </div>
     <!-- /flow-wrapper -->
 
@@ -218,6 +216,7 @@
     <script src="js/jquery-ui.min.js"></script> -->
     <script src="js/classie.js"></script>
     <script src="js/svgLoader.js"></script>
+    <script src="js/detectmobilebrowser.js"></script>
     <script src="js/home.js"></script>
     <!-- /loader -->
 

@@ -1,0 +1,2 @@
+-- animation on project list
+- animate something in overflow contained like on invitation

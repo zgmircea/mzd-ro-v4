@@ -3530,7 +3530,6 @@ input[type=submit] {
   z-index: 1;
   top: 37px;
   left: 37px;
-  background: url("../assets/noise.png") 0px 0px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -3632,7 +3631,10 @@ input[type=submit] {
   pointer-events: none; }
 
 .pageload-overlay svg path {
-  fill: #33374B; }
+  fill: #2B2E3F; }
+
+.pageload-overlay.preloading {
+  background: #2B2E3F; }
 
 .pageload-overlay::after,
 .pageload-overlay::before {
