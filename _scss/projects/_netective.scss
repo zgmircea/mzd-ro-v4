@@ -1,6 +1,9 @@
 $netColor: #8DA4BD;
 $netColorDrk:#566E8A;
 $netHighlight:#94DC56;
+.lnetective {
+    background: $netColorDrk;
+}
 .netective {
     background: $netColor;
     color: #fff;

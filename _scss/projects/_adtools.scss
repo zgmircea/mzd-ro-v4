@@ -1,6 +1,8 @@
 $adtoolsColor: #006699;
 $adtoolsColorDrk: lighten($adtoolsColor, 60%);
-
+.ladtools{
+    background: $adtoolsColor;
+}
 .adTools{
     background: #E5E9EC;
     color:#333;

@@ -1,27 +1,27 @@
-$sambaColor: #212121;
-$sambaColorDrk:#7ACC5A;
-$sambaHighlight:#C7E55D;
-.lsamba {
-    background: $sambaColorDrk;
+$maratonColor: #212121;
+$maratonColorDrk:#51AA28;
+$maratonHighlight:#C7E55D;
+.lmaraton {
+    background: $maratonColorDrk;
 }
-.samba {
-    background: $sambaColor;
+.maraton {
+    background: $maratonColor;
     color: #FFF;
     .highlight-bg {
-        background: $sambaHighlight;
+        background: $maratonHighlight;
         height: 8%;
     }
     .content-bg {
         height: 11%;
-        background: $sambaColorDrk;
+        background: $maratonColorDrk;
     }
     h3,
     h4 {
-        color: $sambaColorDrk;
-        border-color: $sambaColorDrk;
+        color: $maratonColorDrk;
+        border-color: $maratonColorDrk;
     }
     h3:before {
-        background: $sambaColorDrk;
+        background: $maratonColorDrk;
     }
     header {
         color: #fff;
@@ -30,11 +30,11 @@ $sambaHighlight:#C7E55D;
         }
         h3,
         h4 {
-            color: $sambaHighlight;
-            border-color: $sambaHighlight;
+            color: $maratonHighlight;
+            border-color: $maratonHighlight;
         }
         h3:before {
-            background: $sambaHighlight;
+            background: $maratonHighlight;
         }
     }
     .hero {
@@ -82,7 +82,7 @@ $sambaHighlight:#C7E55D;
         .highlight-bg {
             top: 0px;
             height: 107%;
-            background: $sambaColorDrk;
+            background: $maratonColorDrk;
         }
         .window {
             bottom: -450px;
@@ -90,20 +90,20 @@ $sambaHighlight:#C7E55D;
                 color: #fff;
             }
             &::before {
-                border-color: $sambaHighlight;
+                border-color: $maratonHighlight;
             }
         }
     }
     .window {
         &::before {
-            border-color: $sambaColorDrk;
+            border-color: $maratonColorDrk;
         }
         h4 {
             margin-left: 37px;
-            color: $sambaColorDrk;
+            color: $maratonColorDrk;
         }
         &.green h4 {
-            color: $sambaColorDrk;
+            color: $maratonColorDrk;
         }
     }
     .wires {
@@ -111,10 +111,10 @@ $sambaHighlight:#C7E55D;
         position: relative;
         .highlight-bg {
             box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
-            background: url("../projects/samba/wires.jpg") no-repeat;
+            background: url("../projects/maraton/wires.jpg") no-repeat;
             background-size: cover;
             height: 80%;
-            animation: samba-wires 30s infinite alternate linear;
+            animation: maraton-wires 30s infinite alternate linear;
             top: 350px;
         }
         .center {
@@ -144,7 +144,7 @@ $sambaHighlight:#C7E55D;
     }
 }
 
-@keyframes samba-wires {
+@keyframes maraton-wires {
     0% {
         background-position: 0px 0px;
     }

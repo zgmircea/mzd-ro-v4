@@ -13,7 +13,6 @@ jQuery(document).ready(function () {
             stash++;
         else
             stash = 0;
-        console.log(stash);
     });
 
     $("#about figure").mouseleave(function (e) {
@@ -23,20 +22,20 @@ jQuery(document).ready(function () {
     /*
     ------------- Somooth scroll down on hint click ----------------
     */
-
     $('.scroll-down').on("click", function (e) {
         e.preventDefault();
 
         $('nav').removeClass('is-open');
         $('#menu-push').removeClass('is-open');
-
-        $destination = $($(this).attr('href')).offset().top - 200;
-
+        
+        if (!jQuery.browser.mobile)
+            destination = $($(this).attr('href')).offset().top - 200;
+        else
+            destination = this.dataset.scrollDestinationMobile;
+        
         $('html,body').animate({
-            scrollTop: $destination
+            scrollTop: destination
         }, 2000, "easeOutCirc");
-
-        console.log($destination);
 
     });
 
@@ -72,10 +71,10 @@ jQuery(document).ready(function () {
     ------------- TODO When scrolled all way to bottom do as on android hint ----------------
        
     */
-    
+
     // parallaxy-options='{"multiplier":"0.06", "direction":"up", "positionType": "relative"}'
-    
-    
+
+
     var scrollPosition = 0,
         $window = $(window),
         scrollTop = window.pageYOffset,
@@ -87,14 +86,14 @@ jQuery(document).ready(function () {
         ajaxContainer = document.getElementById('results'),
         parallaxableCount = $parallaxable.length;
 
-      /**/
+    /**/
     var pageWrap = document.getElementById('page'),
         pages = [].slice.call(pageWrap.querySelectorAll('div.container')),
         currentPage = 0,
         triggerLoading = [].slice.call(pageWrap.querySelectorAll('a.pageload-link')),
         loader = new SVGLoader(document.getElementById('loader'), {
             speedIn: 500,
-            easingIn : mina.easeinout
+            easingIn: mina.easeinout
         });
 
     /** make screen adjustments */
@@ -157,23 +156,23 @@ jQuery(document).ready(function () {
                 opacity = Math.round((c / 10)).toFixed(0);
             }
 
-            /* Showed...*/
-            $(".revealOnScroll:not(.animated)").each(function () {
-                var $this = $(this),
-                    offsetTop = $this.offset().top;
-
-                if ((scrollTop + win_height_padded) > offsetTop + 200) {
-                    if ($this.data('timeout')) {
-                        window.setTimeout(function () {
-                            $this.addClass('animated ' + $this.data('animation'));
-                        }, parseInt($this.data('timeout'), 10));
-                    } else {
-                        $this.addClass('animated ' + $this.data('animation'));
-                    }
-                }
-            });
-
             if (!jQuery.browser.mobile) {
+                $(".revealOnScroll:not(.animated)").each(function () {
+                    var $this = $(this),
+                        offsetTop = $this.offset().top;
+
+                    if ((scrollTop + win_height_padded) > offsetTop + 200) {
+                        if ($this.data('timeout')) {
+                            window.setTimeout(function () {
+                                $this.addClass('animated ' + $this.data('animation'));
+                            }, parseInt($this.data('timeout'), 10));
+                        } else {
+                            $this.addClass('animated ' + $this.data('animation'));
+                        }
+                    }
+                });
+
+            
                 if (c > square.dataset.secondStep) {
                     $(square).addClass('second-pos');
                 } else
@@ -183,24 +182,24 @@ jQuery(document).ready(function () {
                     $(square).addClass('third-pos');
                 } else
                     $(square).removeClass('third-pos');
-                
+
                 if (c > square.dataset.forthStep) {
                     $(square).addClass('forth-pos');
                 } else
                     $(square).removeClass('forth-pos');
-                
+
                 if (c > square.dataset.lastStep) {
                     $(square).addClass('last-pos');
-                } else{
+                } else {
                     $(square).removeClass('last-pos');
                 }
             }
-      
+
             //check if first screen
             //if(c < 100){
             for (index = 0; index < parallaxableCount; index++) {
                 var $item = $parallaxable[index];
-                
+
                 var currentDelta = $item.dataset.currentDelta;
                 var newDelta = (0 - (scrollTop * $item.dataset.multiplier));
 
@@ -211,9 +210,9 @@ jQuery(document).ready(function () {
 
                 transformString = "translateY(" + tweenDelta + "px) translateZ(0)";
 
-                
+
                 if ($item.dataset.rotation) {
-                     transformString += " rotate(" + $item.dataset.rotation + ")";
+                    transformString += " rotate(" + $item.dataset.rotation + ")";
                 }
                 if ($item.dataset.pita) {
                     pita = tweenDelta * Math.sqrt(2) / 2;
@@ -247,7 +246,14 @@ jQuery(document).ready(function () {
             revealOnScroll();
         });
     }
+    
     revealOnScroll();
+    
+    if (jQuery.browser.mobile) {
+        $(".revealOnScroll:not(.animated)").each(function () {
+            $(this).addClass('animated ' + $(this).data('animation'));
+        });
+    }
     //use an interval for the framrate for performancy
     //scrollIntervalID = setInterval(updatePage, 1e3 / 60);
 
@@ -258,7 +264,7 @@ jQuery(document).ready(function () {
         square.dataset.forthStep = ($('#work').offset().top + $('#work').height() / 2) * 50 / win_height_padded * 1.2;
         square.dataset.lastStep = ($('#contact').offset().top + 1000 + $('#contact').height() / 2) * 50 / win_height_padded * 1.3;
         //initialize the square jump values
-        $("<style>#square.second-pos {left : " + ($('#about article').offset().left - 80) + "px} #square.third-pos{top:" + ($('#process').offset().top - 550) + "px; left:102%;} #square.forth-pos{top:" + ($('#work').offset().top -300) + "px; left:20%;} #square.last-pos{top:" + ($('#contact').offset().top - 700) + "px; left:32%;}</style>").appendTo("head");
+        $("<style>#square.second-pos {left : " + ($('#about article').offset().left - 80) + "px} #square.third-pos{top:" + ($('#process').offset().top - 550) + "px; left:102%;} #square.forth-pos{top:" + ($('#work').offset().top - 300) + "px; left:20%;} #square.last-pos{top:" + ($('#contact').offset().top - 700) + "px; left:32%;}</style>").appendTo("head");
     }
 
     $window[0].onresize = function () {
@@ -271,17 +277,17 @@ jQuery(document).ready(function () {
     //history.pushState("", document.title, window.location.pathname);
 
     if (window.location.hash) {
-        
+
         url = $('*[data-hash="' + window.location.hash + '"]').attr('href');
         //loader.show(function () {
-            $("#results").load(url, function () {
-                $('#page').addClass('hidden');
-                $('#toggle').addClass('is-back');
-                window.scrollTo(0, 0);
-                $parallaxable = ajaxContainer.getElementsByClassName('parallaxable');
-                parallaxableCount = $parallaxable.length;
-                loader.hide();
-            });
+        $("#results").load(url, function () {
+            $('#page').addClass('hidden');
+            $('#toggle').addClass('is-back');
+            window.scrollTo(0, 0);
+            $parallaxable = ajaxContainer.getElementsByClassName('parallaxable');
+            parallaxableCount = $parallaxable.length;
+            loader.hide();
+        });
         //});
     } else {
         // Fragment doesn't exist
@@ -301,11 +307,11 @@ jQuery(document).ready(function () {
     /*
     ------------- PRE/LOADING ----------------*/
     loader.show();
-    $(window).load(function(){ 
-      setTimeout(function () {
-          loader.hide();
-          $('#loader').removeClass('preloading');
-          initSquare();
+    $(window).load(function () {
+        setTimeout(function () {
+            loader.hide();
+            $('#loader').removeClass('preloading');
+            initSquare();
         }, 1000);
     });
 });

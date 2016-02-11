@@ -1,0 +1,148 @@
+$brontoColor: #fff;
+$brontoColorDrk:#7a9b0b;
+$brontoHighlight:#C7E55D;
+.lbronto{
+    background: $brontoHighlight;
+}
+.bronto {
+    background: $brontoColor;
+    color: #333;
+    .highlight-bg {
+        background: $brontoHighlight;
+        height: 8%;
+    }
+    .content-bg {
+        height: 11%;
+        background: #7a9b0b repeat;
+    }
+    h3,
+    h4 {
+        color: $brontoColorDrk;
+        border-color: $brontoColorDrk;
+    }
+    h3:before {
+        background: $brontoColorDrk;
+    }
+    header {
+        color: #fff;
+        em {
+            color: #333
+        }
+        h3,
+        h4 {
+            color: $brontoHighlight;
+            border-color: $brontoHighlight;
+        }
+        h3:before {
+            background: $brontoHighlight;
+        }
+    }
+    .hero {
+        height: 800px;
+        .img {
+            top: 36%;
+            left: 43%;
+            transform: rotate(45deg) translate3d(0,0,0);
+            position: absolute;
+            width: 212px;
+            height: 109px;
+        }
+        .phone {
+            left: 30%;
+            top: 20%;
+        }
+        .logo {
+            top: 10%;
+            margin-left: 0px;
+            left: 75%;
+        }
+    }
+    .responsive{
+        position: relative;
+        top: -250px;
+        right: -250px;
+    }
+    .tree{
+        margin: auto;
+        margin-top: 50px;
+    }
+    .single-feature {
+        p {
+            color: #fff;
+        }
+    }
+    .device {
+        margin: auto;
+    }
+    .result {
+        color: #fff;
+        margin-bottom: 100px;
+        p {
+            width: 60%;
+            margin: 80px auto 0px auto;
+        }
+        .sec {
+            margin-top: 20px;
+        }
+        .highlight-bg {
+            top: -50px;
+            height: 57%;
+            background: $brontoColorDrk;
+        }
+        .window {
+            bottom: -250px;
+            h4 {
+                color: #fff;
+            }
+            &::before {
+                border-color: $brontoHighlight;
+            }
+        }
+    }
+    .window {
+        &::before {
+            border-color: $brontoColorDrk;
+        }
+        h4 {
+            margin-left: 37px;
+            color: $brontoColorDrk;
+        }
+        &.green h4 {
+            color: $brontoColorDrk;
+        }
+    }
+    .wires {
+        height: 600px;
+        position: relative;
+        .highlight-bg {
+            height: 60%;
+            top: 450px;
+        }
+        .center {
+            position: relative;
+            z-index: 1;
+            width: 70%;
+            margin: auto;
+        }
+    }
+    .wire {
+        position: relative;
+        margin-left: -50px;
+        margin-top: 100px;
+        max-width: 100%;
+        z-index: 1;
+        box-shadow: -50px 0px 50px rgba(0,0,0,0.2);
+    }
+    .push {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes bronto-wires {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 0px 500px-1010px;
+    }
+}

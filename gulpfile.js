@@ -14,7 +14,7 @@ var plumber = require('gulp-plumber');
 var browserify  = require('gulp-browserify');
 var uglify      = require('gulp-uglify');
 
-/*
+/*Bournemouth
 npm install --save-dev gulp browser-sync gulp-sass gulp-autoprefixer gulp-imagemin gulp-plumber
 */
 var messages = {
@@ -54,13 +54,13 @@ gulp.task('img', function() {
 });
 
 gulp.task('images', function() {
-    return gulp.src('**/*.{jpg,gif}')
+    return gulp.src('projects/bronto/*.{jpg,gif}')
         .pipe(imageOptim.optimize())
         .pipe(gulp.dest('compressed_images'));
 });
 
 gulp.task('tinypng', function () {
-    gulp.src('projects/**/*.png')
+    gulp.src('projects/bronto/*.png')
         .pipe(tinypng('rQ59GPnlxM6QQo0Q_Fb4KDi97umt2Gg8'))
         .pipe(gulp.dest('compressed_images'));
 });
