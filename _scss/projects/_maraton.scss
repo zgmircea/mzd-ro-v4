@@ -1,18 +1,19 @@
-$maratonColor: #212121;
+$maratonColor: #F5EFE9;
 $maratonColorDrk:#51AA28;
 $maratonHighlight:#C7E55D;
 .lmaraton {
     background: $maratonColorDrk;
 }
+
 .maraton {
     background: $maratonColor;
-    color: #FFF;
+    color: #333;
     .highlight-bg {
         background: $maratonHighlight;
-        height: 8%;
+        height: 12%;
     }
     .content-bg {
-        height: 11%;
+        height: 16%;
         background: $maratonColorDrk;
     }
     h3,
@@ -38,26 +39,24 @@ $maratonHighlight:#C7E55D;
         }
     }
     .hero {
-        height: 800px;
-        img {
-            top: 10%;
-            left: 50%;
-            margin-left: -150px;
+        height: 520px;
+        overflow: visible;
+        .bike {
+            left: 0%;
+            top: 4%;
         }
-        .phone {
-            left: 95%;
-            top: 20%;
-        }
-        .logo {
-            top: 30%;
-            margin-left: 0px;
+        .tree {
+            top: -3%;
             left: 17%;
         }
+        .board {
+            top: 27%;
+        }
     }
-    .memo{
+    .memo {
         margin-top: 20px;
         font-style: italic;
-        a{
+        a {
             color: #fff;
             text-decoration: underline;
         }
@@ -71,7 +70,7 @@ $maratonHighlight:#C7E55D;
         margin: auto;
     }
     .result {
-        margin-bottom: 600px;
+        margin-bottom: 100px;
         p {
             width: 60%;
             margin: 80px auto 0px auto;
@@ -80,12 +79,12 @@ $maratonHighlight:#C7E55D;
             margin-top: 20px;
         }
         .highlight-bg {
-            top: 0px;
-            height: 107%;
+            top: -40px;
+            height:85%;
             background: $maratonColorDrk;
         }
         .window {
-            bottom: -450px;
+            bottom: -100px;
             h4 {
                 color: #fff;
             }
@@ -107,20 +106,8 @@ $maratonHighlight:#C7E55D;
         }
     }
     .wires {
-        height: 600px;
-        position: relative;
-        .highlight-bg {
-            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
-            background: url("../projects/maraton/wires.jpg") no-repeat;
-            background-size: cover;
-            height: 80%;
-            animation: maraton-wires 30s infinite alternate linear;
-            top: 350px;
-        }
         .center {
-            position: relative;
             z-index: 1;
-            width: 70%;
             margin: auto;
         }
     }
@@ -142,13 +129,302 @@ $maratonHighlight:#C7E55D;
         margin-right: -50px;
         z-index: 1;
     }
-}
-
-@keyframes maraton-wires {
-    0% {
-        background-position: 0px 0px;
+    ///////////////////////////////////////////////
+    .demscreen {
+        width: 1200px;
+        margin: auto;
+        height: 948px;
+        position: relative;
+        background: url(../projects/maraton/screen-test.png) left top no-repeat;
+        background-size: cover;
+        z-index: 1;
+        
+        @media screen and (max-width: $capm) {
+            display: none;
+        }
     }
-    100% {
-        background-position: 0px 500px-1010px;
+    
+    #main-view {
+        top: 4.6%;
+        left: 3.6%;
+        width: 93%;
+        height: 66%;
+        overflow: hidden;
+        position: relative;
+    }
+    .shadow {
+        position: absolute;
+        width: 167px;
+        height: 800px;
+        top: 0px;
+        z-index: 100;
+        /*display:none;*/
+        opacity: 0.6;
+    }
+    .shadow.left {
+        left: 0px;
+        background: url(../projects/maraton/images/side-shadow.png) right top repeat-y;
+    }
+    .shadow.left:before,
+    .shadow.left:after,
+    .shadow.right:before,
+    .shadow.right:after {
+        background: url("../projects/maraton/images/sh-round.png") no-repeat scroll left top transparent;
+        content: "";
+        display: block;
+        height: 220px;
+        left: -87px;
+        position: absolute;
+        top: -126px;
+        width: 260px;
+        /*border: 1px solid red;*/
+    }
+    .shadow.left:before {
+        background-position: bottom right;
+    }
+    .shadow.right:before {
+        background-position: bottom left;
+    }
+    .shadow.left:after {
+        left: -91px;
+        top: 635px;
+        background-position: top right;
+    }
+    .shadow.right {
+        right: 0px;
+        background: url(../projects/maraton/images/side-shadow.png) left top repeat-y;
+    }
+    .shadow.right:before {
+        left: -87px;
+        top: -126px;
+    }
+    .shadow.right:after {
+        left: -81px;
+        top: 635px;
+    }
+    .arrow {
+        position: fixed;
+        width: 59px;
+        height: 99px;
+        top: 350px;
+        z-index: 101;
+        display: block;
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    .arrow:hover {
+        opacity: 1;
+    }
+    .arrow.left {
+        left: 30px;
+        background: url(../projects/maraton/images/arow-left.png) left top no-repeat;
+    }
+    .arrow.right {
+        right: 30px;
+        background: url(../projects/maraton/images/arow-right.png) left top no-repeat;
+    }
+    .power {
+        position: fixed;
+        top: 760px;
+        right: 30px;
+        z-index: 101;
+        opacity: 0.4;
+    }
+    .power:hover {
+        opacity: 1;
+    }
+    .layer {
+        height: 800px;
+        width: 3300px;
+        background-position: left top;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        /*
+	-webkit-transition: left 1000ms ease-in;
+	-moz-transition: left 1000ms ease-in;
+	-o-transition: left 1000ms ease-in;
+	transition: left 1000ms ease-in;
+	
+	border:1px solid red;
+	*/
+    }
+    #bottom-shadow {
+        position: absolute;
+        background-image: url(../projects/maraton/images/shadow-bottom.png);
+        background-repeat: repeat-x;
+        height: 130px;
+        z-index: 5;
+        top: 708px;
+        width: 3300px;
+    }
+    #text {
+        z-index: 5;
+        color: #fff;
+    }
+    #text a {
+        color: #fff;
+    }
+    #text li {
+        position: absolute;
+        display: block;
+        width: 150px;
+        left: 400px;
+        line-height: 19px;
+        font-size: 14px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    #text u {
+        text-decoration: line-through;
+    }
+    #text strong {
+        font-weight: bold;
+        font-size: 1.6em;
+        display: block;
+    }
+    #text li.movie {
+        left: 950px;
+        top: 450px;
+    }
+    #text li.date {
+        left: 810px;
+        top: 487px;
+    }
+    #text li.palce {
+        width: 240px;
+        left: 1150px;
+        top: 130px;
+    }
+    #text li.start {
+        left: 1459px;
+        top: 240px;
+        width: 230px;
+    }
+    #text li.route {
+        left: 1353px;
+        top: 407px;
+        width: 210px;
+        text-align: right;
+    }
+    #text li.signup {
+        left: 1975px;
+        top: 212px;
+        width: 180px;
+        text-align: right;
+    }
+    #text li.fee {
+        left: 2332px;
+        top: 431px;
+        width: 215px;
+    }
+    #text li.map {
+        left: 2583px;
+        text-align: right;
+        top: 496px;
+    }
+    #text li.sponsor {
+        left: 2513px;
+        top: 587px;
+        width: auto;
+    }
+    #trees {
+        z-index: 4;
+        background-image: url(../projects/maraton/images/front.png);
+        background-position: right top;
+    }
+    #trees h1,
+    #trees h2,
+    #trees em {
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+    #trees a,
+    .facebook {
+        display: block;
+        height: 130px;
+        width: 329px;
+        position: absolute;
+        background: url(../projects/maraton/images/facebook.png) 0px 0px no-repeat;
+        left: 350px;
+        top: 545px;
+    }
+    #trees a.active {
+        background-position: 0px -130px;
+    }
+    .facebook {
+        background: none;
+        top: 595px;
+        width: 300px;
+        height: 80px;
+    }
+    #trail {
+        z-index: 3;
+        background-image: url(../projects/maraton/images/trail.png);
+    }
+    #forest {
+        z-index: 2;
+        background-image: url(../projects/maraton/images/forest.png);
+    }
+    #bg {
+        z-index: 1;
+        background-image: url(../projects/maraton/images/bg.jpg);
+        background-repeat: repeat-x;
+    }
+    #fb-plank span {
+        position: absolute;
+        top: 70px;
+        right: 38px;
+        background: #fff;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 108px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        text-decoration: none;
+    }
+    #fb-plank.active span {
+        top: 92px;
+    }
+    .step-33 #trees {
+        left: -55px;
+    }
+    .step-33 #text,
+    .step-33 #trail {
+        left: -110px;
+    }
+    .step-33 #forest {
+        left: -10px;
+    }
+    .step-33 #bg {
+        left: -40px;
+    }
+    .step-66 #trees {
+        left: -70px;
+    }
+    .step-66 #text,
+    .step-66 #trail {
+        left: -200px;
+    }
+    .step-66 #forest {
+        left: -30px;
+    }
+    .step-66 #bg {
+        left: -60px;
+    }
+    .step-99 #trees {
+        left: -50px;
+    }
+    .step-99 #text,
+    .step-99 #trail {
+        left: -180px;
+    }
+    .step-99 #forest {
+        left: -100px;
+    }
+    .step-99 #bg {
+        left: -80px;
     }
 }

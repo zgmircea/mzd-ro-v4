@@ -53,14 +53,14 @@ gulp.task('img', function() {
     .pipe(gulp.dest('compressed_images'))
 });
 
-gulp.task('images', function() {
-    return gulp.src('projects/bronto/*.{jpg,gif}')
+gulp.task('images',['tinypng'], function() {
+    return gulp.src('projects/maraton/images/*.{jpg,gif}')
         .pipe(imageOptim.optimize())
         .pipe(gulp.dest('compressed_images'));
 });
 
 gulp.task('tinypng', function () {
-    gulp.src('projects/bronto/*.png')
+    gulp.src('projects/maraton/images/*.png')
         .pipe(tinypng('rQ59GPnlxM6QQo0Q_Fb4KDi97umt2Gg8'))
         .pipe(gulp.dest('compressed_images'));
 });
@@ -107,7 +107,7 @@ gulp.task('js-watch',['js'], browserSync.reload);
 gulp.task('watch',function(){
     gulp.watch(['_scss/**'],['sass']);
     gulp.watch('js/*.js',['js-watch']);
-    gulp.watch(['index.html','_layouts/*.html'],['html']);
+    gulp.watch(['index.html','projects/*.html'],['html']);
 	//gulp.watch('img/src/*.{png,jpg,gif}', ['img']);
 })
 
