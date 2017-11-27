@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Cookie|Roboto|Hammersmith+One|Noto+Sans:400,700|Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display|Raleway);
 /*!
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -19,15 +19,11 @@ body, input, textarea {
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
-    color: $accent;
-    font-family: "Montserrat", Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: normal;
 }
-h1 {
-	color: #fff;
-}
-h2 {
-	
+h1{
+    font-size:40px;
 }
 h3 {
 	font-size: 60px;

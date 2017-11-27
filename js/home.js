@@ -19,6 +19,56 @@ jQuery(document).ready(function () {
         $(this).removeAttr("class");
     });
 
+    $("#hero h1").on("hover", "span",function(e){
+        $("#title").addClass("active");
+    });
+    $("#title").mouseleave(function(){
+        $("#title").removeClass("active");            
+    });
+    var newText = new Array;
+    var rotatingIndex = 1;
+    
+    newText['product-designer'] = "A digital <span>product designer <i class=\"line\"></i></span>  based in London. Turning complex processes into simple, meaningful and engaging experiences is what I do.<a href=\"#readmore\" title=\"Dsicover more about y experience and how I work\">Read more</a>";
+    
+    newText['problem-solver'] = "A skilled <span>problem solver<i class=\"line\"></i></span> with the heart of a designer and the mind of an engineer.I trust that a good process will always lead to good outcomes.<a href=\"#readmore\" title=\"Dsicover more about y experience and how I work\">Read more</a>";
+    
+    newText['spceialist-generalist'] = " A good <span>spceialist-generalist <i class=\"line\"></i></span> with a wide range of design skills. Fluid in design thinking, user experience and interaction design.<a href=\"#readmore\" title=\"Dsicover more about y experience and how I work\">Read more</a>";
+    
+    newText['unicorn-designer'] = "A magic <span>unicorn designer <i class=\"line\"></i></span> that eats challanges and poops elegant solutions. Running wild trough the meadows where function and delight intersect.<a href=\"#readmore\" title=\"Dsicover more about y experience and how I work\">Read more</a>";
+    
+    
+    $("#title a").each(function(){
+        $(this).click(function(){
+            var mme=$(this).attr('href').substring(1);
+            $("#hero h1").fadeOut(300,function(){
+                $(this).html(newText[mme]).fadeIn(300,function(){
+                    $("#hero .line").addClass("active");
+                    clearInterval(timeoutID);
+                    timeoutID = window.setInterval(frame, 30000);
+                });
+            })
+            rotatingIndex =  $("#title a").index(this);
+            
+            $("#title").removeClass("active"); 
+            $("#hero").removeClass("product-designer problem-solver spceialist-generalist unicorn-designer").addClass(mme);
+           
+        }); 
+    });
+    $("#hero .line").addClass("active");
+     
+    function frame(){
+        $("#hero .line").removeClass("active");
+        
+        if(rotatingIndex<3)
+        rotatingIndex++;
+        else
+            rotatingIndex = 0;
+        
+        $("#title a").get(rotatingIndex).click();
+    };
+    
+    var timeoutID = window.setInterval(frame, 30000);
+    
     /*
     ------------- Somooth scroll down on hint click ----------------
     */
@@ -53,12 +103,11 @@ jQuery(document).ready(function () {
                 $('nav').removeClass('is-open');
                 $('#menu-push').removeClass('is-open');
 
-                $('#square').removeClass('is-open');
+                
                 $('#letter-push').removeClass('is-open');
             } else {
                 $('nav').addClass('is-open');
                 $('#menu-push').addClass('is-open');
-                $('#square').addClass('is-open');
                 $('#letter-push').addClass('is-open');
             }
         }
@@ -79,9 +128,8 @@ jQuery(document).ready(function () {
         $window = $(window),
         scrollTop = window.pageYOffset,
         win_height_padded = $window.height() * 1.1,
-        win_width_padded = $window.width() * 1.1,
-        square = document.getElementById('square');
-
+        win_width_padded = $window.width() * 1.1;
+        
     var $parallaxable = document.getElementsByClassName('parallaxable'),
         ajaxContainer = document.getElementById('results'),
         parallaxableCount = $parallaxable.length;
@@ -172,27 +220,6 @@ jQuery(document).ready(function () {
                     }
                 });
 
-            
-                if (c > square.dataset.secondStep) {
-                    $(square).addClass('second-pos');
-                } else
-                    $(square).removeClass('second-pos').removeAttr('style');
-
-                if (c > square.dataset.thirdStep) {
-                    $(square).addClass('third-pos');
-                } else
-                    $(square).removeClass('third-pos');
-
-                if (c > square.dataset.forthStep) {
-                    $(square).addClass('forth-pos');
-                } else
-                    $(square).removeClass('forth-pos');
-
-                if (c > square.dataset.lastStep) {
-                    $(square).addClass('last-pos');
-                } else {
-                    $(square).removeClass('last-pos');
-                }
             }
 
             //check if first screen
@@ -258,19 +285,6 @@ jQuery(document).ready(function () {
     //scrollIntervalID = setInterval(updatePage, 1e3 / 60);
 
 
-    initSquare = function () {
-        square.dataset.secondStep = ($('#about').offset().top + $('#about').height() / 2) * 50 / win_height_padded;
-        square.dataset.thirdStep = ($('#process').offset().top + $('#process').height() / 2) * 50 / win_height_padded * 1.2;
-        square.dataset.forthStep = ($('#work').offset().top + $('#work').height() / 2) * 50 / win_height_padded * 1.2;
-        square.dataset.lastStep = ($('#contact').offset().top + 1000 + $('#contact').height() / 2) * 50 / win_height_padded * 1.3;
-        //initialize the square jump values
-        $("<style>#square.second-pos {left : " + ($('#about article').offset().left - 80) + "px} #square.third-pos{top:" + ($('#process').offset().top - 550) + "px; left:102%;} #square.forth-pos{top:" + ($('#work').offset().top - 300) + "px; left:20%;} #square.last-pos{top:" + ($('#contact').offset().top - 700) + "px; left:32%;}</style>").appendTo("head");
-    }
-
-    $window[0].onresize = function () {
-        initSquare()
-    };
-
     /*
     --------------------- Hash navigation -------------------------
     */
@@ -311,7 +325,6 @@ jQuery(document).ready(function () {
         setTimeout(function () {
             loader.hide();
             $('#loader').removeClass('preloading');
-            initSquare();
         }, 1000);
     });
 });

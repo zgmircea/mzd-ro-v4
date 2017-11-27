@@ -1,9 +1,8 @@
 #head{
 	width:100%;
     height: 100%;
-	min-height:900px;
+	min-height:768px;
 	z-index:2;
-    height:1400px;
     position: relative;
     
     .content-bg{
@@ -45,35 +44,81 @@
     }
     h1{
         width: 100%;
-        z-index: 3;
+        z-index: 1;
         position: relative;
     }
 
 }
-#head .wrapper{
-    display: inline-flex; 
-	position:relative;
-    width:100%;
-    height: 100%;
-    z-index: 3;
-}
 
 #head hgroup{
 	//width:395px;
-	width:80%;
+	width:800px;
     height:80%;
-	
+	background: $bg;
+    padding:50px 50px 0px 50px;
 	margin:auto auto;
-    text-transform: uppercase;
-    text-align: center;
-    color: #fff;
     position: relative;
-    text-shadow: 1px 1px rgba(0,0,0,0.1);
-    top:100px;
+    top:200px;
 
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
     -webkit-transform: translate3d(0,0,0);
+    
+    
+     ul{
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 86px;
+        left:188px;
+        z-index: 2;
+        list-style: none;
+        font-size: 40px;
+        box-sizing: border-box;
+
+        margin: 0px;
+        padding: 20px;
+        height: 0px;
+
+        background:$bg;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+
+        color:$text-gold;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: normal;
+        transition: all 250ms ease;
+         
+        &.active{
+            opacity: 1;
+            height: 300px;
+        }
+    }
+    
+    &.problem-solver{
+        ul{
+            left:193px;
+            top: 21px;
+        }
+    }
+    &.spceialist-generalist{
+        ul{
+            left:163px;
+            top: -44px;
+        }
+    }
+    &.unicorn-designer{
+        ul{
+            left:182px;
+            top: -109px;
+        }
+    }
+    &.product-designer{
+        ul{
+            top: 86px;
+            left:188px;
+        }
+    }
+    
     
     @media screen and (max-width: $capm){
         width: 95%;
@@ -82,46 +127,15 @@
     @media (max-width: $xs){   
         top: 150px;
     }
-}
-
-#mestylez{
-    position: absolute;
-    top: 90px;
-    left: 50%;
-    width: 853px;
-    height: 853px;
-    z-index: 0;
-    margin-left: -425px;
-    background: $bglite;
-    transform: rotate(45deg);
-    overflow: hidden;
-    z-index: 0;
     
-    img{
-        transform: rotate(-45deg);
-        margin-top: 132px;
-        margin-left: 224px;
-    }
-    
-    @media screen and (max-width: $capm){
-        top: 20px;
-    }
-}
-
-#hero span{
-    display: block;
-    position: absolute;
-    box-sizing: border-box;
-    opacity:1;
 }
 .hi{
-    font-weight: 100;
-    top: 20px;
-    letter-spacing:9.6px;
-    left: 154px;
+    font-size: 18px;
+    color:$text-gold;
+    text-transform: uppercase;
+    font-weight: semiBold;
     -webkit-animation-delay: 700ms; /* Chrome, Safari, Opera */
     animation-delay: 700ms;
-    
     
     @media screen and (max-width: $capm){
         left: 54px;
@@ -135,242 +149,55 @@
         z-index: 10;
     }
 }
-.mircea{
-    font-size: 82px;
-    top: 60px;
-    right:-6px;
-    letter-spacing: 15px;
+#head h1 a{
+    color: $text;
+    border-bottom: 1px solid $text-gold;
+    font-size: 0.5em;
     
-    &:before{
-        background: #fff;
-        display: block;
-        content: " ";
-        height: 3px;
-        width: 50%;
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
+    &:hover, &:focus{
+        background:$text-gold;
+        color: white;
     }
-    
-    @media screen and (max-width: $capm){
-       font-size: 62px;
-    } 
 }
-.and{
-    width: 600px;
-    height: 600px;
-    margin-left: -291px;
-    top: 126px;
-    font-weight: 100;
-    text-align: center;
-    letter-spacing: 8px;
-    left: 50%;
-    -webkit-animation-delay: 500ms; /* Chrome, Safari, Opera */
-    animation-delay: 500ms;
-}
-#head .designer{
-    font-size: 120px;
-    text-transform: capitalize;
-    font-family: "Cookie";
-    font-weight: 100;
-    height: 600px;
-    width: 600px;
+
+h1 span{
+    color:$text-gold;
+    display: inline-block;
     position: relative;
-    margin-left: -300px;
-    left: 50%;
-    
-    &::before{
-        top: 170px;
-        right: -90px;
-        width: 120%;
-        height: 67%;
-        position: absolute;
-        z-index: 1;
-        content: " ";
-        display: block;
-        background-color: rgba(0,0,0,0.3);
-        mask:url("#{$imageBase}designer.svg#maskid") no-repeat 50% 50%;
-        -webkit-clip-path: url(#{$imageBase}designer.svg#clip-svg-demo);
-        clip-path: url(#{$imageBase}designer.svg#clip-svg-demo);
-        mask-position:0px 0px;
-        
-        transform: skewY(-6deg);
-        transform-origin: top right;
-        //mask-position: 700px 150px;
-    }
-    img {
-        position: absolute;
-        left: 0px;
-        width: 115%;
-        height: 100%;
-        z-index: 2;
-        transition: all 500ms ease;
-    }
-   
-}
-#square {
-    position: absolute;
-    left: 50%;
-    margin-left: -250px;
-    top: 250px;
-    width: 610px;
-    z-index: 2;
-    transition: all 1500ms ease;
-
-    img{
-        position: relative;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-    }
-    
-    &:after{
-        position: absolute;
-        z-index: 1;
-        content: " ";
-        display: block;
-        width: 71%;
-        height: 60%;
-        border: 12px solid rgba(0,0,0,0.3);
-        top: 126px;
-        left: 60px;
-        transform: rotate(35deg) skewY(10deg);
-    }
-    &.is-open{
-        transition: all 1400ms ease;
-        top: 325px;
-        
-        @media screen and (max-width: $capm){
-            top:225px;
-        }
-    }
-    
-    @media screen and (max-width: $capm){
-        top:150px;
-    }
-    @media (max-width: $xs){   
-        top: 300px;
-    }
-}
-
-#square.second-pos{
-    top: 1459px;
-    left: 240px;
-    width: 1200px;
-    height: 1200px;
-    transform: rotate(51deg);
-    
-    &:after{;
-        top: 270px;
-        left: 145px;
-        transform: rotate(35deg) skewY(0deg);
-    }
-    
-    @media screen and (min-width: 1800px){
-        left:140px;
-    }
-    
-}
-#square.third-pos{
-    top: 2290px;
-    left: 102%;
-    width: 1000px;
-    height: 1000px;
-    transform: rotate(176deg);
-    
-    &:after{
-       
-    }
-}
-#square.forth-pos{
-    top: 2290px;
-    left: 102%;
-    width: 800px;
-    height: 800px;
-    transform: rotate(76deg);
     z-index: 1;
-}
-
-#square.last-pos{
-    transform: rotate(0deg);
-}
-
-/* push the designer font over the square */
-#letter-push{
-    position: absolute;
-    left: 50%;
-    margin-left: -291px;
-    top: 387px;
-    width: 601px;
-    z-index: 3;
-    transition: all 600ms ease;
-    font-size: 2em;
+    padding-right: 10px;
     
-    &:after, &:before{
-        display: inline-block;
-        z-index: 10;
-        width: 90px;
-        height: 78px;
-        position: absolute;
+    &::after{
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 10px 10px;
+        border-color: transparent transparent $text-gold transparent;
         content: " ";
-        background-color:#fff;
-        mask:url("#{$imageBase}designer.svg#clip-svg-square") no-repeat;
-        -webkit-clip-path: url(#{$imageBase}designer.svg#bigd);
-        clip-path: url(#{$imageBase}designer.svg#bigd);
-        mask-size: 690px 600px;
-        mask-position: -79px;
-        top: 135px;
-        left: 70px;
-    }
-    &:before{
-        height: 131px;
-        right: -42px;
-        left: auto;
-        top: 116px;
-        mask-position:-561px -242px;
-        -webkit-clip-path: url(#{$imageBase}designer.svg#finalr);
-        clip-path: url(#{$imageBase}designer.svg#finalr);
+        position: absolute;
+        right: 0px;
+        bottom:15px;
     }
     
-    &.is-open{
-        transition: all 1400ms ease;
-        top: 471px;
+    .line{
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        display: block;
+        bottom:10px;
+        z-index: 0;
+        background: $text;
+        opacity: 0.2;
         
-        @media screen and (max-width: $capm){
-            top:372px;
+        &.active{
+            transition: width 30000ms linear;
+             width:100%;
         }
     }
     
-    @media screen and (max-width: $capm){
-        top:287px;
-        margin-left: -293px;
-    }
-    @media (max-width: $xs){   
-        top: 456px;
-        font-size: 1.3em;
-    }
 }
-.craft{
-    font-weight: 100;
-    font-size: 25px;
-    width: 431px;
-    height: 163px;
-    position: absolute;
-    top: 580px;
-    right: 130px;
-    letter-spacing: 7.5px;
-    animation-delay: 1000ms;
-    background:url("#{$imageBase}selector.png") 0px 0px no-repeat;
-    box-sizing: border-box;
-    padding: 40px 50px;
-    z-index: 2;
-
-    @media (max-width: $xs){   
-        top: auto;
-        bottom: 80px;
-    }
-}
-
+    
 #head hgroup::before,
 #head hgroup::after{
     display: none;
@@ -433,9 +260,9 @@
 
 .scroll-hint{
     position: absolute;
-    top: 14%;
+    bottom: -4%;
     left: 50%;
-    margin-left: -19%;
+    margin-left: -9%;
     z-index: 21;
     @media screen and (max-width: $capm){
         left: auto;
@@ -531,7 +358,7 @@
         height:121px; 
         background-position:-804px 0px;
         top: 50px;
-        left: 35%;
+        left: 85%;
         @media screen and (max-width: $capm){
             left: auto;
             right: 15%;

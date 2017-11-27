@@ -11,11 +11,7 @@
     position: relative;
     @include clearfix;
     aside {
-        width: 645px;
-        height: 700px;
-        background:url("#{$imageBase}vektors.png") no-repeat;
-        position: relative;
-        left: 180px;
+        margin-top: 218px;
         @media (max-width: $capm) {
             margin-top: 50px;
             //display: none;
@@ -74,57 +70,8 @@
 }
 
 .skill {
-    position: absolute;
     cursor: default;
     transition: opacity 500ms ease;
-    &:nth-child(1) {
-        top: -30px;
-        left: 42%;
-    }
-    &:nth-child(2) {
-        top: 55px;
-        right: 0%;
-    }
-    &:nth-child(3) {
-        top: 165px;
-        right: -15%;
-    }
-    &:nth-child(4) {
-        top: 330px;
-        right: -18%;
-    }
-    &:nth-child(5) {
-        top: 501px;
-        right: -13%;
-    }
-    &:nth-child(6) {
-        top: 607px;
-        right: 11%;
-    }
-    &:nth-child(7) {
-        top: 697px;
-        left: 35%;
-    }
-    &:nth-child(8) {
-        top: 607px;
-        left: 10%;
-    }
-    &:nth-child(9) {
-        top: 501px;
-        left: -20%;
-    }
-    &:nth-child(10) {
-        top: 330px;
-        left: -17%;
-    }
-    &:nth-child(11) {
-        top: 158px;
-        left: -20%;
-    }
-    &:nth-child(12) {
-        top: 55px;
-        left: 7%;
-    }
     strong {
         font-weight: normal;
     }
@@ -134,7 +81,7 @@
     p {
         display: none;
         position: absolute;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         box-shadow: $shadow;
         padding: 10px;
@@ -237,7 +184,7 @@
         top: 0px;
         z-index: 2;
         left: -5%;
-        box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 40px 100px rgba(0, 0, 0, 0.05);
         position: absolute;
         background: $bg;
         

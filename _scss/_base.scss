@@ -7,22 +7,22 @@ $max-width: 1800px;
 $footerheight: 50px;
 
 /* Colors */
-$bg: #2B2E3F;
-$bglite: #33374B;
+$bg: #FDFDFC;
+$bglite: #F5F3FF;
 $bgdark: darken($bg, 10%);
 
-$text-gold:#7D744C; 
-$accent: #6DDBCE;
+$text-gold:#EC785D; 
+$accent: #63A7AE;
 
-$text: #AAABB2;
-$links: $accent;
-$hover: #4CB7D3;
+$text: #585F5B;
+$links: $text-gold;
+$hover: $accent;
 
 $purple: #BE4EC4;
 $bluish: #85A3D5;
 
 /* Fonts */
-$main: 'Open Sans', sans-serif;
+$main: 'Raleway', sans-serif;
 
 /* Borders */
 $border: 1px solid #fff;
