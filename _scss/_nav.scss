@@ -1,5 +1,5 @@
-nav {
-  position: fixed;
+.mobile-nav {
+  position: absolute;
   top: 0px;
   left: 0px;
   z-index: 20;
@@ -7,7 +7,6 @@ nav {
   height: 0px;
   transition: all 1000ms ease;
   z-index: 100;
-    font-family: 'Playfair Display', Georgia, serif;
     
   ul {
     list-style: none;
@@ -29,10 +28,7 @@ nav {
     font-size: 1.3em;
     color: $text;
   }
-  &.is-open {
-    height: 85px;
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.27);   
-  }
+  
   @media (max-width: $m){
         ul {
             display: block;
@@ -45,15 +41,26 @@ nav {
             width: 100%;
             margin-bottom: 50px;
             &:first-child{
-                margin-top: 180px;
+                margin-top: 150px;
             }
         }
         
         a {
-            color: $text;
+            color: #fff;
+            display: contents;
+            font-size: 0.5em;
             display: block;
         }
-        &.is-open {
+    }
+}
+
+nav.mobile-nav {
+    &.is-open {
+    height: 85px;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.27);   
+  }
+     @media (max-width: $m){
+          &.is-open {
             height: 100%;
         }
     }
@@ -81,10 +88,13 @@ nav {
   transition: all 500ms ease;
     
     @media (max-width: $m){
-        transform: scale(2.5);
+        transform: scale(1);
+        top: 25px;
+        right: 25px;
     }
     
     &.is-back{
+        position: fixed;
         background:  rgba(0,0,0,0.1);
         padding: 5px;
         border-radius: 10px;
@@ -94,7 +104,7 @@ nav {
     }
 }
 
-nav {
+.mobile-nav {
   span,
   span:before,
   span:after {
@@ -143,7 +153,7 @@ nav {
     }
   }
     
-  // Mobile Nav
+  /* Mobile Nav
   .mobile-nav {
     display: none;
     position: absolute;
@@ -161,7 +171,7 @@ nav {
       text-align: center;
       margin-bottom: 10px;
     }
-  }
+  }*/
 }
 
 @media (max-width: 775px) {

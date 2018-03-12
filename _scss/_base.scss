@@ -22,7 +22,8 @@ $purple: #BE4EC4;
 $bluish: #85A3D5;
 
 /* Fonts */
-$main: 'Raleway', sans-serif;
+$main: 'PT Serif',Cambria,"Times New Roman",Times,serif;
+$title: 'Playfair Display', Georgia, serif;
 
 /* Borders */
 $border: 1px solid #fff;
@@ -30,7 +31,7 @@ $shadow:  1px 1px 5px rgba(0,0,0,0.3);
 
 /* Breakpoints */
 $cap: 1920px;
-$capm: 1375px;
+$capm: 1280px;
 $m: 850px;
 $s: 740px;
 $xs: 640px;

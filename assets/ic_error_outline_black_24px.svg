@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_error_outline_black_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="📱-Entity/Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_error_outline_black_24px" transform="translate(-1.000000, -1.000000)">
+            <polygon id="Shape" points="0 0 20 0 20 20 0 20"></polygon>
+            <path d="M9.16666667,12.5 L10.8333333,12.5 L10.8333333,14.1666667 L9.16666667,14.1666667 L9.16666667,12.5 Z M9.16666667,5.83333333 L10.8333333,5.83333333 L10.8333333,10.8333333 L9.16666667,10.8333333 L9.16666667,5.83333333 Z M9.99166667,1.66666667 C5.39166667,1.66666667 1.66666667,5.4 1.66666667,10 C1.66666667,14.6 5.39166667,18.3333333 9.99166667,18.3333333 C14.6,18.3333333 18.3333333,14.6 18.3333333,10 C18.3333333,5.4 14.6,1.66666667 9.99166667,1.66666667 Z M10,16.6666667 C6.31666667,16.6666667 3.33333333,13.6833333 3.33333333,10 C3.33333333,6.31666667 6.31666667,3.33333333 10,3.33333333 C13.6833333,3.33333333 16.6666667,6.31666667 16.6666667,10 C16.6666667,13.6833333 13.6833333,16.6666667 10,16.6666667 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
