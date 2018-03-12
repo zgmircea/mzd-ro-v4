@@ -53,22 +53,13 @@ $maratonHighlight:#C7E55D;
             top: 27%;
         }
     }
-    .memo {
-        margin-top: 20px;
-        font-style: italic;
-        a {
-            color: #fff;
-            text-decoration: underline;
-        }
+    .responsive {
+        position: absolute;
+        z-index: 2;
+        right: 10%;
+        bottom: 0px;
     }
-    .single-feature {
-        p {
-            color: #fff;
-        }
-    }
-    .device {
-        margin: auto;
-    }
+    
     .result {
         margin-bottom: 100px;
         p {
@@ -110,24 +101,6 @@ $maratonHighlight:#C7E55D;
             z-index: 1;
             margin: auto;
         }
-    }
-    .wire {
-        position: absolute;
-        z-index: 1;
-        bottom: -300px;
-        left: 50%;
-        margin-left: -500px;
-        max-width: 100%;
-    }
-    .wirecont {
-        margin-top: 500px;
-    }
-    .push {
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-    }
-    .dongle {
-        margin-right: -50px;
-        z-index: 1;
     }
     ///////////////////////////////////////////////
     .demscreen {

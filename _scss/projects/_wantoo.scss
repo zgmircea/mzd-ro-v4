@@ -1,0 +1,151 @@
+$wantooColor: #F4E2D4;
+$wantooColorDrk:#EE8B6C;
+$wantooHighlight:#753761;
+.lwantoo{
+    background: $wantooColorDrk;
+}
+.wantoo {
+    background: $wantooColor;
+    color: $wantooHighlight;
+    margin-top: 0px;
+    padding-top: 0px;
+    
+    .highlight-bg {
+        top: 15%;
+        background: $wantooHighlight;
+        height: 20%;
+        z-index: 2;
+    }
+    .content-bg {
+        height: 20%;
+        min-height: 100px;
+        background: $wantooColorDrk;
+        width: 120%;
+        left: -60%;
+        top: 45%;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15);
+    }
+    h3,
+    h4 {
+        color: $wantooColorDrk;
+        border-color: $wantooColorDrk;
+    }
+    h3:before {
+        background: $wantooColorDrk;
+    }
+    header {
+        color: #fff;
+        h3,
+        h4 {
+            color: #fff;
+            border-color: #fff;
+        }
+        h3:before {
+            background: #fff;
+        }
+    }
+    
+    
+    #head{
+        width: 100%;
+        height: 1000px;
+        position: relative;
+        z-index: 1;
+        
+        img{
+            z-index: 11;
+            position: relative;
+            left: 50%;
+            margin-left: -200px;
+            top: 50%;
+            margin-top: -315px;
+        }
+    }
+    .bg-letter{
+        color: $wantooColorDrk;
+        z-index: 1;
+        font-size: 88em;
+        position: absolute;
+        top: -60%;
+        margin-left: -660px;
+        left: 50%;
+        font-weight: bold;
+        
+        &.under{
+            color: $wantooHighlight;
+            z-index: 0;
+            margin-left: -550px;
+            opacity: 0.5;
+        }
+    }
+    
+    .hero {
+        height: 800px;
+        margin-top: 200px;
+        overflow: visible;
+        img {
+            top: 15%;
+            right: 0px;
+        }
+        img:first-child {
+            top: 30%;
+            
+        }
+        img:last-child {
+            top: 0%;
+        }
+    }
+    
+    .content{
+        margin-top: 600px;
+        margin-bottom: 0px;
+    }
+    .title{
+        margin-bottom: 600px;
+    }
+    .flow{
+        margin-top: 100px;
+    }
+    .logo, .ui{
+        margin-top: 300px;
+    }
+    .result {
+       margin-top: 600px;
+        margin-bottom: 200px;
+        p {
+             color: #fff;
+            width: 60%;
+            margin: 20px auto 0px auto;
+        }
+        .sec {
+            margin-top: 20px;
+        }
+        .highlight-bg {
+            top: -100px;
+            background: $wantooHighlight;
+            z-index: 0;
+        }
+        .window {
+            bottom: -50px;
+            h4 {
+                color: #fff;
+            }
+        }
+    }
+    .window {
+        &::before {
+            border-color: $wantooColorDrk;
+        }
+        h4 {
+            margin-left: 37px;
+            color: $wantooColorDrk;
+        }
+        &.green h4 {
+            color: $wantooColorDrk;
+        }
+    }
+    .full {
+        color: #333;
+    }
+ 
+}

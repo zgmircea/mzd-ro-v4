@@ -9,8 +9,8 @@ html{
 (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) { 
     html{
-        zoom: 50%;
-        -moz-transform: scale(0.5);  /* Firefox */
+        //zoom: 50%;
+        //-moz-transform: scale(0.5);  /* Firefox */
     }
 }
 /* 1.25 dpr */
@@ -34,7 +34,7 @@ html{
     /* Retina-specific stuff here */
 }
 body {
-	background: $bg;
+	background: $bg url("../assets/bg-dots.svg") 32px -80px repeat-x;
 	margin: 0;
 	padding: 0;
     height: 100%;

@@ -1,5 +1,5 @@
-nav {
-  position: fixed;
+.mobile-nav {
+  position: absolute;
   top: 0px;
   left: 0px;
   z-index: 20;
@@ -16,7 +16,7 @@ nav {
     display: flex;
     width: 100%;
     height: 100%;
-    background: white;
+    background:$bg;
     overflow: hidden;
   }
   li {
@@ -26,12 +26,9 @@ nav {
   a {
     font-weight: normal;
     font-size: 1.3em;
-    color: $bg;
+    color: $text;
   }
-  &.is-open {
-    height: 85px;
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.27);   
-  }
+  
   @media (max-width: $m){
         ul {
             display: block;
@@ -44,15 +41,26 @@ nav {
             width: 100%;
             margin-bottom: 50px;
             &:first-child{
-                margin-top: 180px;
+                margin-top: 150px;
             }
         }
         
         a {
-            color: white;
+            color: #fff;
+            display: contents;
+            font-size: 0.5em;
             display: block;
         }
-        &.is-open {
+    }
+}
+
+nav.mobile-nav {
+    &.is-open {
+    height: 85px;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.27);   
+  }
+     @media (max-width: $m){
+          &.is-open {
             height: 100%;
         }
     }
@@ -61,7 +69,7 @@ nav {
 #menu-push {
   transition: all 600ms ease;
   height: 0px;
-  background:#F7CCA6 {}
+  background:#F7CCA6;
   &.is-open {
     transition: all 1400ms ease;
     height: 85px;
@@ -80,10 +88,13 @@ nav {
   transition: all 500ms ease;
     
     @media (max-width: $m){
-        transform: scale(2.5);
+        transform: scale(1);
+        top: 25px;
+        right: 25px;
     }
     
     &.is-back{
+        position: fixed;
         background:  rgba(0,0,0,0.1);
         padding: 5px;
         border-radius: 10px;
@@ -93,7 +104,7 @@ nav {
     }
 }
 
-nav {
+.mobile-nav {
   span,
   span:before,
   span:after {
@@ -101,7 +112,7 @@ nav {
     display: block;
     height: 2px;
     width: 100%;
-    background: white;
+    background: $text;
     position: relative;
     top: 15px;
     transition: all 0.3s ease-in-out;
@@ -142,12 +153,12 @@ nav {
     }
   }
     
-  // Mobile Nav
+  /* Mobile Nav
   .mobile-nav {
     display: none;
     position: absolute;
     width: 100%;
-    background: white;
+    background: $bg;
     padding: 30px 0 20px;
     transform: translateY(-100%);
     transition: all 0.3s ease-in-out;
@@ -160,7 +171,7 @@ nav {
       text-align: center;
       margin-bottom: 10px;
     }
-  }
+  }*/
 }
 
 @media (max-width: 775px) {

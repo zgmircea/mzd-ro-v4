@@ -70,3 +70,5 @@ gulp.1
 # =========================
 .brackets.json
 .htaccess
+home.js
+projects/.htpasswd

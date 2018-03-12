@@ -1,4 +1,4 @@
-$lunaColor: #F4E2D4;
+$lunaColor: #fff;
 $lunaColorDrk:#ED7789;
 $lunaHighlight:#F4D2C8;
 .lluna{
@@ -7,13 +7,27 @@ $lunaHighlight:#F4D2C8;
 .luna {
     background: $lunaColor;
     color: #D66D79;
+    
+    @media (max-width: $xs) {
+        margin-top: 0px;
+    }
+    
     .highlight-bg {
         background: $lunaHighlight;
         height: 10%;
+        top: -80px;
+        
+        @media (max-width: $xs) {
+           height: 11%;
+        }
     }
     .content-bg {
         height: 10%;
         background: $lunaColorDrk;
+        top: -80px;
+        @media (max-width: $xs) {
+           height: 11%;
+        }
     }
     h3,
     h4 {
@@ -38,17 +52,26 @@ $lunaHighlight:#F4D2C8;
         }
     }
     .hero {
-        height: 800px;
+        height: 480px;
+        width: 400px;
+        margin: 0px auto;
         img {
-            top: 10%;
-            left: 50%;
-            margin-left: -210px;
+            width: 100%;
+        }
+        
+        @media (max-width: $xs) {
+             width: 100%;
         }
     }
     .analisys {
         img {
             margin-top: 80px;
             max-width: 100%;
+        }
+    }
+    .device{
+        img{
+            width: 400%;
         }
     }
     .imac {
@@ -66,16 +89,16 @@ $lunaHighlight:#F4D2C8;
         margin: auto;
     }
     .result {
-        margin-bottom: 600px;
+        margin-bottom: 100px;
         p {
-            width: 60%;
-            margin: 180px auto 0px auto;
+            z-index: 2;
+            position: relative;
         }
         .sec {
             margin-top: 20px;
         }
         .highlight-bg {
-            top: 100px;
+            top: -40px;
             background: $lunaColorDrk;
         }
         .window {
@@ -201,8 +224,14 @@ $lunaHighlight:#F4D2C8;
     height: 687px;
     background: url("../projects/luna/interactive/drop.png") no-repeat;
     position: relative;
-    margin: auto;
+    margin: 0px auto;
     color: #BF5279;
+    
+    @media (max-width: $xs) {
+            height: 400px;
+            transform: scale(0.5) translateX(-150px);
+        }
+    
     div {
         position: absolute;
     }
@@ -284,7 +313,8 @@ $lunaHighlight:#F4D2C8;
     h4 {
         position: absolute;
         z-index: 2;
-        top: 40px;
+        top: auto;
+        bottom: 120px;
         left: 110px;
         font-size: 13em;
         text-shadow: 30px 30px 0px rgba(0, 0, 0, 0.04), -1px -1px 0px rgba(255, 255, 255, 0.2);

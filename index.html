@@ -11,10 +11,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mircea Zagrean - UX/UI Designer</title>
-    <meta name="description" content="Mircea Zagrean is a UX/UI designer specialised in web and mobile interfaces.">
+    <title>Mircea Zagrean - Product Designer - UX/UI</title>
+    <meta name="description" content="Mircea Zagrean is a product designer specialised in web and mobile interfaces. UX & UI guy">
     <meta name="author" content="Mircea Zagrean">
-    <meta name="keywords" content="Mircea Zagrean, Mircea, Zagrean, UX, UI, Design, Web Design, Mobile, Andoid Design">
+    <meta name="keywords" content="Mircea Zagrean, Mircea, Zagrean, product, UX, UI, Design, Web Design, Mobile, Andoid Design">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -38,6 +38,24 @@
 
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <script src="js/snap.svg-min.js"></script>
+    
+    <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = '978T9';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+    d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+    ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
 </head>
 
 <body>
@@ -50,7 +68,7 @@
         <div id="menu-push"></div>
         <nav id="main-nav" class="mobile-nav">
             <ul>
-                <li><a href="#about" class="scroll-down" data-scroll-destination-mobile="610">About</a></li>
+                <li><a href="#about" class="scroll-down" data-scroll-destination-mobile="0">About</a></li>
                 <li><a href="#process" class="scroll-down" data-scroll-destination-mobile="1650">Process</a></li>
                 <li><a href="#work" class="scroll-down" data-scroll-destination-mobile="3200">Work</a></li>
                 <li><a href="#contact" class="scroll-down" data-scroll-destination-mobile="4600">Contact</a></li>
@@ -60,135 +78,175 @@
         <div id="page">
             <header id="head" class="revealOnLoad">
                 <div class="wrapper">
-                    <hgroup id="hero" class="xhideOnScroll" data-animation="fadeOut" data-animation-return="fadeIn" data-timeout="2">
-                        <h1>
+                    <hgroup id="hero" class="xhideOnScroll" class="problem-solver" data-animation="fadeOut" data-animation-return="fadeIn" data-timeout="2">
                         <span class="hi revealOnLoad" data-animation="fadeInUp">Hi, I'm Mircea</span>
-                        <!-- <span class="mircea revealOnLoad" data-animation="fadeInUp">I'm a</span> -->
-                        <span class="designer revealOnLoad" data-animation="fadeInDown">
-                            <img src="assets/designer.svg" alt="Designer" onerror="this.src='assets/designer.png'" />
-                        </span>
-                    </h1>
-                        <h2 class="craft revealOnLoad  parallaxable" data-current-delta="0" data-multiplier="0.2" data-animation="fadeInDown">I craft interfaces</h2>
-                        <div id="mestylez"><img src="assets/mircea.png" alt="Breaking Borders Logo" class="parallaxable" data-current-delta="0" data-multiplier="-0.3" data-rotation="-45deg" data-pita="true" /></div>
+                        <h1 class="revealOnLoad" data-animation="fadeInDown">
+                            A digital <span>product designer <i class="line"></i></span>  based in London. Turning complex processes into simple, meaningful and engaging experiences is what I do.
+                        </h1><a href="#morePop" class="readmore" title="Dsicover more about y experience and how I work" data-scroll-destination-mobile="0">Read more</a>
+                        
+                        <ul id="title"><li><a href="#product-designer">product designer</a></li>
+                            <li><a href="#problem-solver">problem solver</a></li>
+                            <li><a href="#specialist-generalist">spceialist-generalist</a></li>
+                            <li><a href="#unicorn-designer">unicorn designer</a></li>
+                        </ul>
+                        <!-- /crate ghaphical holders -->
                     </hgroup>
                 </div>
                 <!-- /wrapper -->
-                <!-- /crate ghaphical holders -->
-                <div class="content-bg"></div>
-                <div class="highlight-bg parallaxable" data-current-delta="0" data-multiplier="-0.25" data-skew="0, -20deg"></div>
-            </header>
-            <span id="letter-push" class="and revealOnLoad" data-animation="zoomIn">UI/UX</span>
-            <div id="square"><img src="assets/square.svg" alt="Breaking Borders Logo" onerror="this.src='assets/square.png'" /></div>
-
+                
+           
+            <!--
             <div id="scroller" class="scroll-hint parallaxable" data-current-delta="0" data-multiplier="0.5">
                 <a href="#about" class="mouse scroll-down"><span class="unu"></span> <span class="doi"></span></a>
             </div>
             <!-- /scroll-hint -->
+            </header>
 
             <!-- diamonds -->
-            <div class="diamond bigblue parallaxable" data-current-delta="0" data-multiplier="-0.25" data-rotation="-180deg" data-pita="true"></div>
-            <!-- <div class="diamond shadowed smallblue parallaxable" data-current-delta="0" data-multiplier="1" data-rotation="45deg"></div> -->
-            <div class="diamond shadowed green parallaxable" data-current-delta="0" data-multiplier="-0.6" data-rotation="45deg" data-pita="true"></div>
-            <div class="diamond dddgreen parallaxable" data-current-delta="0" data-multiplier="-0.4"></div>
-            <div class="diamond dddgrey parallaxable" data-current-delta="0" data-multiplier="0.7"></div>
-            <div class="diamond dddpurple parallaxable" data-current-delta="0" data-multiplier="0.2"></div>
-            <!-- <div class="diamond shade parallaxable" data-current-delta="0" data-multiplier="1"></div> -->
+            <div class="diamond bigblue parallaxable" data-current-delta="0" data-multiplier="-1.05" data-rotation="180deg" data-pita="true"></div>
+            <div class="diamond dddgrey parallaxable" data-current-delta="0" data-multiplier="1.7"></div>
+            <div class="diamond dddpurple parallaxable" data-current-delta="0" data-multiplier="0.4"></div>
             <!-- /diamonds -->
+            
+            <!-- overlay -->
+            <div id="morePop" class="overlay-popup">
+                <div class="mobile-nav is-open">
+                    <div id="togglePOP" class="mobile-nav-toggle"><span></span></div>
+                </div>
+            <!-- about -->
+             
+            <section id="about" class="container parallaxable" data-current-delta="0" data-multiplier="0.1" >
+               
+                <article class="revealOnScroll" data-animation="fadeInUp">
+                    <h3>About me</h3>
+                     <figure class="parallaxable" data-current-delta="0" data-multiplier="-0.25" >
+                            <img src="assets/mircea.png" alt="MZD = Mircea Zagrean" />
+                        </figure>
+                        <p>I’m a self-taught product designer based in London driven by the heart of a creative but grounded by the mind of an engineer. Turning complex processes into simple, meaningful and engaging experiences is what I do. My hybrid background in product thinking, UX design and visual allows me to create memorable experiences through functional and beautiful interfaces. </p>
+                        
+                        <p>For the past 11 years, I've worked with a large variety of clients from all around the world and have been involved in different projects from small apps to corporate level, from idea validation to prototype through to launch. </p>
+                        
+                        <blockquote>My job is to bring products to life. Merge client and strategic requirements and transform them into user centred experiences. I get to influence what products are, become and the way they are built.</blockquote>
 
-            <section id="about" class="container parallaxable" data-current-delta="0" data-multiplier="0.1">
-                <article class="col span_5 revealOnScroll" data-animation="fadeInUp">
-                    <h3>about <strong>me</strong></h3>
-                    <p>I have over 10 years experience in digital design with a focus on interface design and user experience. I’ve worked with a large variety of clients all around the world and have been involved in small projects to large corporate apps from concept through to detailed style guides. I put a lot of commitment into my work, seeking opportunities to deliver the best experience possible for any product I'm involved with. </p>
+                    <p>I believe that empathy and collaboration are key to creating great products & experiences and trust that a good process will always lead to good outcomes. </p>
 
-                    <p>I believe that collaboration and user centered design are key to creating great products & experiences. My background in computer science gives me the ability to understand the impact of my design decisions and gives me a wide perspective over the whole liefecycle of a project. </p>
-
-                    <p>My skill set includes user experience research and design, user interface design, wireframing and prototyping, data & user centered testing and front-end development languages including SASS, CSS3, JS, HTML5. </p>
+                    <p>My background in computer engineering gives me the ability to understand the impact of my design decisions and gives me a wide perspective over the whole lifecycle of a project. </p>
+                    
+                    <p><strong>Core Strengths:</strong> Design Thinking, User Experience Design, UX Research, Interaction Design, IA, Wireframeing, Prototyping, User Interface Design, Responsive, Usability, User-Centred Design, Design Sprint</p>
+                    
+                    <p><strong>Fluent in:</strong>Sketch, XD, inVision, Origami, Framer, Zeplin, XHTML5, CSS3, Javascript, jQuerry, PHP, Wordpress, After Effects</p>
+                    
+                    <p><strong>#travel #motorcycle #bikelife #ski #sci-fi #zombies #rollerblade #experience #design #tinker #psychology #technology</strong></p>
+                    
                     <p class="social">
+                        <a  href="https://dribbble.com/mzd"><i class="fa fa-dribbble"> Dribbble</i></a>
                         <a href="https://ro.linkedin.com/in/zgmircea"><i class="fa fa-linkedin-square"> Linkedin</i></a>
-                        <a href="/mircea-zagrean-resume.pdf"><i class="fa fa-file-text-o"></i> Resume</a>
+                        <!-- <a href="/mircea-zagrean-resume.pdf"><i class="fa fa-file-text-o"></i> Resume</a> -->
                         <a href="https://github.com/zgmircea"><i class="fa fa-github"></i> Github</a>
+                        <a href="https://Codepen.com/zgmircea"><i class="fa fa-codepen"></i> Codepen</a>
                     </p>
+                    
+                    <blockquote>" Push the extra mile to turn good into great"</blockquote>
+ 
                 </article>
-
-                <div class="col span_7 skillsHolder">
-                    <aside class="skills parallaxable revealOnScroll" data-animation="fadeInRight" data-current-delta="0" data-multiplier="0.1">
+                
+                 
+            </section>
+            
+            <!--
+            <section>
+                 <aside class="skills parallaxable revealOnScroll" data-animation="fadeInRight" data-current-delta="0" data-multiplier="0.1">
                         <div class="skill"><strong>Task Analysis</strong></div>
-                        <div class="skill"><strong>Competitive Analysis</strong></div>
                         <div class="skill"><strong>User Research</strong></div>
+                        <div class="skill"><strong>Competitive Analysis</strong></div>
+                        
                         <div class="skill"><strong>Mental Model</strong></div>
+                        <div class="skill"><strong>Personas</strong></div>
+                        
+                        <div class="skill"><strong></strong></div>
+                        <div class="skill"><strong>Ideation</strong></div>
                         <div class="skill"><strong>Storyboards</strong></div>
-                        <div class="skill"><strong>Pageflows</strong></div>
+                        <div class="skill"><strong>Flows</strong></div>
                         <div class="skill"><strong>Information Architecture</strong></div>
-                        <div class="skill"><strong>Wireframes</strong></div>
+                        <div class="skill"><strong></strong></div>
+                        <div class="skill"><strong>Interaction Design</strong></div>
                         <div class="skill"><strong>Rapid Prototyping</strong></div>
                         <div class="skill"><strong>Visual Design</strong></div>
-                        <div class="skill"><strong>Interaction Design</strong></div>
-                        <div class="skill"><strong>Brand Identity</strong></div>
-                        <figure>
-                            <img src="assets/mircea-zagrean-mzd.png" alt="MZD = Mircea Zagrean" />
-                        </figure>
                     </aside>
-                </div>
             </section>
             <!-- /about -->
-            <section class="container parallaxable" data-current-delta="0" data-multiplier="0.07" id="process">
-                <h3 class="parallaxable" data-current-delta="0" data-multiplier="0.2">my <strong>process</strong></h3>
+                
+            <!-- process -->
+            <section class="container" data-current-delta="0" data-multiplier="0.07" id="process">
+                <h3>My process</h3>
                 <ul class="clear">
                     <li class="revealOnScroll" data-animation="fadeInLeft">
                         <div class="expertise blue "><span class="fa fa-comments-o icon" data-text="edit"></span>
-                            <h4>RESEARCH</h4></div>
+                            <h4>Research</h4></div>
                         <p>We strategise, conceptualise and experiment together. You know your industry inside out and I know mine, so we share knowledge and guidance in both directions.</p>
                     </li>
                     <li class=" revealOnScroll" data-animation="fadeInLeft" data-timeout="100">
                         <div class="expertise green"><span class="fa fa-cogs icon" data-text="cut"></span>
-                            <h4>MAKE</h4></div>
+                            <h4>Prototype</h4></div>
                         <p>I turn ideas into prototypes and visuals based on what we learn. This is a fast paced phase full of sketches and wireframes where ideas blossom and fade.</p>
                     </li>
                     <li class=" revealOnScroll" data-animation="fadeInRight" data-timeout="200">
                         <div class="expertise purple"><span class="fa fa-check-circle-o icon" data-text="cog"></span>
-                            <h4>TEST</h4></div>
+                            <h4>Test</h4></div>
                         <p>We need to test our theories and educated guesses with real users to gather feedback on the user experience as early and as frequently as possible. </p>
                     </li>
                     <li class=" revealOnScroll" data-animation="fadeInRight" data-timeout="300">
                         <div class="expertise bluish"><span class="fa fa-refresh icon" data-text="cog"></span>
-                            <h4>ITERATE</h4></div>
+                            <h4>Iterate</h4></div>
                         <p>Back to the drawing board. It's not something bad. It's just about making it better. So we analyse data, learn, discuss, adjust and iterate until we find the best solutions.</p>
                     </li>
                 </ul>
-                <blockquote class="parallaxable" data-current-delta="0" data-multiplier="-0.2">" Push the extra mile to turn good into great"</blockquote>
-            </section>
-            <!-- /process -->
-            <section id="work" class="">
-                <a href="https://dribbble.com/mzd" id="dribbble-clips"><i class="fa fa-dribbble"></i> <span>Check out my dribble</span></a>
-                <h3>my latest <strong>work</strong></h3>
-                <div class="container">
-                    <!-- 
-                <a href="projects/teledine.html" data-hash="#gone2travel" class="pageload-link"><img src="projects/thumbz/gone2travel.jpg" valt="Gone 2 Travel  project thumb" /></a>
-                -->
-                    <a href="projects/batteriesshack.html" data-hash="#batteriesshack" class="pageload-link lbatteriesshack"><img src="projects/thumbz/bshack.jpg" alt="BatteriesShack  project thumb" /> <span>BatteriesShack <em>website - research, ux, ui</em></span></a>
-                    <a href="projects/adtools.html" data-hash="#adtools" class="pageload-link ladtools"><img src="projects/thumbz/adtools.jpg" alt="adtools  project thumb" />  <span>AdTools <em>webapp - research, ux, ui, front-end</em></span></a>
-                    <a href="projects/bronto.html" data-hash="#bronto" class="pageload-link lbronto"><img src="projects/thumbz/bronto.jpg" alt="Bronto project thumb" /> <span>Bronto<em>website - ux, ui, graphics, responsive</em></span></a>
-                    <a href="projects/great-logo.html" data-hash="#great-logo" class="pageload-link lgreat stop"><img src="projects/thumbz/great-logo.jpg" alt="Geat logo  project thumb" /></a>
-                    <a href="projects/samba.html" data-hash="#samba" class="pageload-link lsamba"><img src="projects/thumbz/samba-mobile.jpg" alt="Samba project thumb" /> <span>Samba Mobile<em>website - ux, ui, graphics, responsive</em></span></a>
-                    <a href="projects/gone2travel.html" data-hash="#gone2travel" class="pageload-link ltravel stop"><img src="projects/thumbz/gone2travel.jpg" alt="Gone 2 Travel  project thumb" /></a>
-                    <a href="projects/maraton.html" data-hash="#faget" class="pageload-link lmaraton"><img src="projects/thumbz/clujul-pedaleaza.jpg" alt="Maraton faget project thumb" /><span>Mountain Bike Marathon<em>website - ui, graphics, responsive</em></span></a>
-                    <a href="projects/luna-logo.html" data-hash="#luna-logo" class="pageload-link lluna stop"><img src="projects/thumbz/luna-logo.jpg" alt="Luna logo project thumb" /></a>
-                    <a href="projects/netective.html" data-hash="#netective" class="pageload-link lnetective"><img src="projects/thumbz/netective.jpg" alt="Netective project thumb" /> <span>Netective<em>webapp - product design, research, ux, ui, responsive</em></span></a>
-                    <a href="projects/luna.html" data-hash="#luna" class="pageload-link lluna"><img src="projects/thumbz/luna.jpg" alt="Luna project thumb" /> <span>Luna<em>mobile app - ux, ui, graphics</em></span></a>
-                    <a href="projects/havana.html" data-hash="#havana" class="pageload-link lhavana stop"><img src="projects/thumbz/havana-logo.jpg" alt="Havana logo project thumb" /></a>
-                    <a href="projects/icg.html" data-hash="#icg" class="pageload-link licg stop"><img src="projects/thumbz/icg-identity.jpg" alt="ICG project thumb" /></a>
-                    <a href="projects/sportstiming.html" data-hash="#sportstiming" class="pageload-link lsportstiming stop"><img src="projects/thumbz/sports-timing-logo.jpg" alt="Sports Timing Logo project thumb" /></a>
+                           </section>
+                <div class="personal">
+                   <img src="assets/personaly.jpg" alt="me" />
                 </div>
-                <!-- /crate ghaphical holders -->
-                <div class="content-bg"></div>
-                <div class="highlight-bg parallaxable" data-current-delta="0" data-multiplier="0.05" data-skew="0, 8deg"></div>
+            <!-- /process -->
+            </div>
+            <!-- /overlay -->
+            <section id="work" class="">
+                 <!--<a href="https://dribbble.com/mzd" id="dribbble-clips"><i class="fa fa-dribbble"></i> <span>Check out my dribble</span></a>-->
+                <div class="container">
+                <!-- --> <a href="projects/ygratings.html" data-hash="#ygratings" class="pageload-link lratings "><img src="projects/thumbz/ygratings.jpg" valt="YouGov Ratings project thumb" />
+                     <span>YouGov Ratings<em>responsive web</em></a>
+
+                <a href="projects/brandindex.html" data-hash="#brandindex" class="pageload-link lbrandindex "><img src="projects/thumbz/brandindex.jpg" valt="YouGov Brandindex project thumb" />
+                    <span>BrandIndex<em>web app - product design</em></a>
+                
+                    <a href="projects/ygcollaborate.html" data-hash="#ygcollaborate  stop" class="pageload-link lcollab "><img src="projects/thumbz/ygcollaborate.jpg" valt="YouGov Collaborate project thumb" />
+                    <span>YouGov Collaborate<em>web app - product design</em></a>
+                    
+                    <a href="projects/luna.html" data-hash="#luna" class="pageload-link lluna"><img src="projects/thumbz/luna.jpg" alt="Luna project thumb" /> <span>Luna<em>mobile app - ux, ui, graphics</em></span></a>
+                   <a href="projects/megadine.html" data-hash="#megadine" class="pageload-link lmegadine"><img src="projects/thumbz/megadine.jpg" alt="megadine project thumb" /> <span>MegaDine<em>android app - ux, ui</em></span></a>
+                    
+                    <a href="projects/samba.html" data-hash="#samba" class="pageload-link lsamba"><img src="projects/thumbz/samba-mobile.jpg" alt="Samba project thumb" /> <span>Samba Mobile<em>website - ux, ui, graphics, responsive</em></span></a>
+                    
+                    <a href="projects/scanbite.html" data-hash="#scanbite" class="pageload-link lscanbite"><img src="projects/thumbz/scanbite.jpg" alt="Scanbite  project thumb" /> <span>ScanBite<em>app - ux, ui, graphics</em></span></a>
+                    
+                    <a href="projects/wantoo.html" data-hash="#wantoo" class="pageload-link lwantoo"><img src="projects/thumbz/wantoo.jpg" alt="Wantoo project thumb" /> <span>Wantoo<em>app - ux, ui, graphics</em></span></a>
+                    
+                    <a href="projects/netective.html" data-hash="#netective" class="pageload-link lnetective"><img src="projects/thumbz/netective.jpg" alt="Netective project thumb" /> <span>Netective<em>webapp - product design, research, ux, ui, responsive</em></span></a>
+                    <!--<a href="projects/havana.html" data-hash="#havana" class="pageload-link lhavana stop"><img src="projects/thumbz/havana-logo.jpg" alt="Havana logo project thumb" /></a>
+                    <a href="projects/icg.html" data-hash="#icg" class="pageload-link licg stop"><img src="projects/thumbz/icg-identity.jpg" alt="ICG project thumb" /></a>-->
+                    
+                    <a href="projects/adtools.html" data-hash="#adtools" class="pageload-link ladtools"><img src="projects/thumbz/adtools.jpg" alt="adtools  project thumb" />  <span>AdTools <em>webapp - research, ux, ui, front-end</em></span></a>
+                    <a href="projects/omnipark.html" data-hash="#omnipark" class="pageload-link lomnipark stop"><img src="projects/thumbz/omnipark.jpg" alt="omnipark  project thumb" />  <span>OmniPark <em>web, device, product  - research, ux, ui, front-end</em></span></a>    
+                    
+                    
+                    <a href="https://dribbble.com/mzd" data-hash="#sportstiming" class="flgreat"><img src="projects/thumbz/dribbble.jpg" alt="Mzd on dribbble" /> <span>Dribbble <em>more of my work</em></span></a>
+                </div>
+                
             </section>
 
             <section id="contact" class="container">
                 <h3>Want to start something amazing?</h3>
-                <p>I’m always looking for the chance to work on innovative and ambitious projects and products</p>
+                <p>I'm always looking for the chance to work on innovative and ambitious projects and products</p>
                 <p>
-                    <a href="mailto:mircea@mzd.me.uk" rel="email"><i class="fa fa-envelope"></i> mircea@mzd.me.uk</a>
+                    <a href="mailto:mircea@mzd.me.uk" rel="email"><i class="fa fa-envelope"></i> mircea@mirceazagrean.com</a>
                     <a href="tel: +44 793 340 5388 " rel="phone"><i class="fa fa-phone"></i>+44 793 340 5388</a>
                 </p>
             </section>
@@ -196,7 +254,7 @@
         <!-- /page -->
         <div id="results"></div>
         <!-- /page -->
-        <div id="under">Please keep in mind that this website is still under development.</div>
+                <div id="under">Please keep in mind that this website is still under development. <a id="closenotif">X</a> <i class="line"></i></div>
         <!-- /page -->
         
     </div>
@@ -230,6 +288,8 @@
         ga('create', 'UA-3566640-3', 'auto');
         ga('send', 'pageview');
     </script>
+            
+            
 </body>
 
 </html>

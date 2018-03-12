@@ -7,17 +7,17 @@
     url("#{$imageBase}stash3.gif");
     background-position: -200px -200px, -200px -200px, -200px -200px;
     background-repeat: no-repeat;
-    cursor: url("#{$imageBase}stash.gif"),
+    cursor: url("#{$imageBase}stash.png"),
     auto;
 }
 
 #about figure.chinese {
-    cursor: url("#{$imageBase}stash2.gif"),
+    cursor: url("#{$imageBase}stash2.png"),
     auto;
 }
 
 #about figure.redneck {
-    cursor: url("#{$imageBase}stash3.gif"),
+    cursor: url("#{$imageBase}stash3.png"),
     auto;
 }
 
@@ -36,7 +36,6 @@
     height: 154px;
     display: inline-block;
     margin-right: 10px;
-    color: #fff;
     text-align: center;
     position: relative;
     padding-top: 140px;
@@ -44,7 +43,8 @@
     margin: 0px auto;
     
     @media (max-width: $xs) {
-        transform: scale(1.5);
+        transform: scale(1);
+        margin: -110px 0px -70px 0px;
     }
 }
 
@@ -63,18 +63,15 @@
 
 .expertise:hover .icon,
 #process li:hover .expertise .icon {
-    font-size: 6em;
-    top: -20px;
-    width: 83px;
-    margin-left: -45px;
-    text-shadow: 10px 10px rgba(0, 0, 0, 0.7);
+    color: #fff;
+    margin-top: -20px;
+    opacity: 1;
 }
 
 .expertise h4 {
     z-index: 2;
     position: relative;
     font-size: 1.2em;
-    color: #fff;
     margin-top: 10px;
     &:after {
         display: block;
@@ -85,7 +82,9 @@
         margin-top: 5px;
     }
 }
-
+.expertise:hover h4{
+    color: #fff;
+}
 .expertise:before {
     display: block;
     width: 180px;
@@ -99,7 +98,7 @@
     height: 0px;
     border-style: solid;
     border-width: 128px 0 128px 128px;
-    border-color: transparent transparent transparent rgba(255, 255, 255, 0.2);
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.02);
     transition: all 500ms ease;
     transform-origin: left;
 }
@@ -107,7 +106,7 @@
 .expertise:hover:before,
 #process li:hover .expertise:before {
     transform: rotate(-90deg);
-    border-color: transparent transparent transparent rgba(255, 255, 255, 0.4);
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.2);
     //border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
 }
 
@@ -182,7 +181,22 @@
     border-width: 90px;
 }
 
-#process
+#process{}
+
+
+#morePop{
+    position: absolute;
+    top: 0px;
+    z-index: 111;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    display: none;
+    
+    .mobile-nav .mobile-nav-toggle{
+        top:25px;
+    }
+}
 /* =error404
 ----------------------------------------------- */
 
@@ -190,15 +204,78 @@
     width: 75%;
 }
 
-#under {
-    background: rgba(0, 0, 0, 0.4);
+#under, .under {
+    background: #fff;
     text-align: center;
-    padding: 10px 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    padding: 5px 0px;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -250px;
+    right: 10px;
     z-index: 10;
     font-size: 0.8em;
+    position:fixed;
+    z-index: 10000;
+    
+    width: 600px;
+    overflow: hidden;
+    
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.3);
+    border-radius: 2px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    box-sizing: border-box;
+    
+    a{
+        float:right;
+        margin-right: 10px;
+        display: block;
+        background: #fff;
+        color: black;
+        border-radius: 100px;
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+        box-sizing: border-box;
+        text-align: center;
+        
+         @media (max-width: $xs) {
+             margin-right: -60px;
+             margin-top: -20px;
+             height: 35px;
+            width: 35px;
+            line-height: 35px;
+        }
+    }
+    .line{
+        position: absolute;
+        display: block;
+        width: 0px;
+        height: 2px;
+        background: #fff;
+        left: 0px;
+        bottom: 0px;
+        transition: all ease 38000ms;
+        @media (max-width: $xs) {
+            width: 0%;
+        }
+    }
+    .line.countdown{
+        width: 600px;
+        @media (max-width: $xs) {
+            width: 100%;
+        }
+    }
+     @media (max-width: $xs) {
+        font-size: 0.5em;
+         padding-right: 70px;
+         padding-left: 10px;
+         text-align: left;
+         width: 95%;
+         left: 2.5%;
+         margin-left: 0px;
+    }
 }
 
 .revealOnScroll {
@@ -267,7 +344,7 @@
 }
 
 .pageload-overlay::after {
-    background: $purple;
+    background: $text-gold;
     -webkit-transform: translateX(-20px);
     transform: translateX(-20px);
     -webkit-animation: moveRight 0.6s linear infinite alternate;
