@@ -194,35 +194,6 @@ window['_fs_namespace'] = 'FS';
                  <!--<a href="https://dribbble.com/mzd" id="dribbble-clips"><i class="fa fa-dribbble"></i> <span>Check out my dribble</span></a>-->
                 <div class="container">
                 <!-- --> 
-                    <?php 
-                        if($_SESSION['nda']==true)
-                        {
-                        echo '
- <a href="projects/ygratings.html" data-hash="#ygratings" class="pageload-link lratings"><img src="projects/thumbz/ygratings.jpg" valt="YouGov Ratings project thumb" />
-                    <span>YouGov Ratings<em>responsive web</em></a>
-
-                <a href="projects/brandindex.html" data-hash="#brandindex" class="pageload-link lbrandindex"><img src="projects/thumbz/brandindex.jpg" valt="YouGov Brandindex project thumb" />
-                    <span>BrandIndex<em>web app - product design</em></a>
-                
-                    <a href="projects/ygcollaborate.html" data-hash="#ygcollaborate  stop" class="pageload-link lcollab"><img src="projects/thumbz/ygcollaborate.jpg" valt="YouGov Collaborate project thumb" />
-                    <span>YouGov Collaborate<em>web app - product design</em></a>
-                    
-';
-                            
-                        }else{
-/*echo '
- <a href="projects/ygratings.html" data-hash="#ygratings" class="pageload-link lratings nda stop"><img src="projects/thumbz/ygratings.jpg" valt="YouGov Ratings project thumb" />
-                    <span>YouGov Ratings<em>responsive web</em><strong>project access restricted</strong></a>
-
-                <a href="projects/brandindex.html" data-hash="#brandindex" class="pageload-link lbrandindex nda stop"><img src="projects/thumbz/brandindex.jpg" valt="YouGov Brandindex project thumb" />
-                    <span>BrandIndex<em>web app - product design</em><strong>project access restricted</strong></a>
-                
-                    <a href="projects/ygcollaborate.html" data-hash="#ygcollaborate  stop" class="pageload-link lcollab nda stop"><img src="projects/thumbz/ygcollaborate.jpg" valt="YouGov Collaborate project thumb" />
-                    <span>YouGov Collaborate<em>web app - product design</em><strong>project access restricted</strong></a>
-                    
-'; */                           
-                        }
-                    ?>
                    
                    <a href="projects/netective.html" data-hash="#netective" class="pageload-link lnetective"><img src="projects/thumbz/netective.jpg" alt="Netective project thumb" /> <span>Netective<em>webapp - product design, research, ux, ui, responsive</em></span></a>
                     
