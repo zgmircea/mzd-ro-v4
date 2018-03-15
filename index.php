@@ -1,26 +1,4 @@
-<?php 
-    session_start();
-//fb - 4c9184f37cff01bcdc32dc486ec36961
-//georgiana-paddle - 34b7da764b21d298ef307d04d8152dc5
-//test - d8e8fca2dc0f896fd7cb4cb0031ba249
-//Sharla Duncan - 0206412c9e346a159944129929a1b18d
-//Tom Cotterill - 0ee5e1b5b22836b196dcd21678995631
-//Temp1 - d23eb76f04c5cb62f0759611c26d7db7
-//Temp2 - 42870793c1ef66a0c438dc4c6529c2fc
 
-//do  the authentication
-    if($_GET['uid']=="4c9184f37cff01bcdc32dc486ec36961" || $_GET['uid']=="34b7da764b21d298ef307d04d8152dc5" || $_GET['uid']=="d8e8fca2dc0f896fd7cb4cb0031ba249" || $_GET['uid']=="0206412c9e346a159944129929a1b18d" || $_GET['uid']=="0ee5e1b5b22836b196dcd21678995631" || $_GET['uid']=="d23eb76f04c5cb62f0759611c26d7db7" || $_GET['uid']=="42870793c1ef66a0c438dc4c6529c2fc")
-        $_SESSION['nda'] = true;
-    else
-        if(!isset($_SESSION['nda']))
-            $_SESSION['nda'] = false;
-
-//user => password
-$users = array('admin' => 'mypass', 'guest' => 'guest');
-
-$user = $_SERVER['PHP_AUTH_USER'];
-$pass = $_SERVER['PHP_AUTH_PW'];
-?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
